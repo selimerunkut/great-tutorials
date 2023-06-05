@@ -12,7 +12,7 @@ const _dialog = [
   {
     dialog: () => (
       <SpeakerRight pathToAvatar='./assets/punk5950.png'>
-        I want to jump back into helping the gangs!
+        I want to make an attestation!
       </SpeakerRight>
     ),
     choices: null
@@ -20,27 +20,7 @@ const _dialog = [
   {
     dialog: () => (
       <SpeakerLeft pathToAvatar='./assets/punk_anon.png'>
-        I do hope you still know where your loyalty lies ...
-      </SpeakerLeft>
-    ),
-    choices: ({ continueDialog }) => {
-      return (
-        <Button className='is-warning' onClick={() => continueDialog()}>
-          No doubt about it
-        </Button>
-      )
-    }
-  },
-  {
-    dialog: () => (
-      <SpeakerRight pathToAvatar='./assets/punk5950.png'>No doubt about it</SpeakerRight>
-    ),
-    choices: null
-  },
-  {
-    dialog: () => (
-      <SpeakerLeft pathToAvatar='./assets/punk_anon.png'>
-        Well then, let's get you up to speed
+        I’ll introduce you to the schemas and attestations.
       </SpeakerLeft>
     ),
     choices: null
@@ -48,15 +28,16 @@ const _dialog = [
   {
     dialog: () => (
       <SpeakerLeft pathToAvatar='./assets/punk_anon.png'>
-        Start by reconnecting to the city network
+        Well, you can go to <a href="https://easscan.org/attestation/create" target="_blank">easscan</a> or we can open it here
       </SpeakerLeft>
     ),
     choices: () => (
       <Link to={routesMap.SetupLocalNetwork.path}>
-        <Button className='is-warning'>Setup Network</Button>
+        <Button className='is-warning'>Open EAS App</Button>
       </Link>
     )
   }
+
   /*
   {
     dialog: () => <SpeakerRight pathToAvatar='./assets/punk5950.png'>I'm in!</SpeakerRight>,

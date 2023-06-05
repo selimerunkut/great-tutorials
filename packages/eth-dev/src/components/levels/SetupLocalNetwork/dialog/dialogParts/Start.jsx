@@ -20,16 +20,6 @@ const _dialog = [
           className='is-warning'
           onClick={() => {
             jumpToDialogPath({
-              dialogPathId: SETUP_NETWORK_PATH_ID
-            })
-          }}
-        >
-          I know what to do
-        </Button>
-        <Button
-          className='is-warning'
-          onClick={() => {
-            jumpToDialogPath({
               dialogPathId: BEGINNER_DEV_PATH_ID
             })
           }}

@@ -5,8 +5,8 @@ import { routesMap } from '../../../../../routes'
 import { enrichDialog } from '../../../../../helpers'
 import { SpeakerLeft, SpeakerRight, Button } from '../../../../gameItems/components'
 
-import { DIALOG_PART_ID as BUILD_DAPPS } from './BuildDapps'
-import { DIALOG_PART_ID as LEARN_ABOUT_SC_SECURITY } from './LearnAboutScSecurity'
+import { DIALOG_PART_ID as CREATE_ATTESTATION } from './CreateAttestation'
+import { DIALOG_PART_ID as CREATE_A_SCHEMA } from './CreateASchema'
 
 export const LEVEL_ID = 'Intro'
 export const DIALOG_PART_ID = `${LEVEL_ID}/FirstContact`
@@ -14,53 +14,51 @@ export const DIALOG_PART_ID = `${LEVEL_ID}/FirstContact`
 const _dialog = [
   {
     dialog: () => (
-      <SpeakerLeft pathToAvatar='./assets/punk_anon.png'>Hello old friend.</SpeakerLeft>
+      <SpeakerLeft pathToAvatar="./assets/punk_anon.png">Hello old friend.</SpeakerLeft>
     ),
     choices: null
   },
   {
     dialog: () => (
-      <SpeakerLeft pathToAvatar='./assets/punk_anon.png'>
-        Nice to see that you have not given up on this city!
-      </SpeakerLeft>
+      <SpeakerLeft pathToAvatar="./assets/punk_anon.png">Nice to see you here</SpeakerLeft>
     ),
     choices: null
   },
-  {
+  /*   {
     dialog: () => (
       <SpeakerLeft pathToAvatar='./assets/punk_anon.png'>
         What have you been up to all this time?
       </SpeakerLeft>
     ),
     choices: null
-  },
+  }, */
   {
     dialog: () => (
-      <SpeakerLeft pathToAvatar='./assets/punk_anon.png'>Why have you come back?</SpeakerLeft>
+      <SpeakerLeft pathToAvatar="./assets/punk_anon.png">What do you want to do?</SpeakerLeft>
     ),
     choices: ({ jumpToDialogPath }) => {
       return (
         <>
           <Button
-            className='is-warning'
+            className="is-warning"
             onClick={() =>
               jumpToDialogPath({
-                dialogPathId: BUILD_DAPPS
+                dialogPathId: CREATE_ATTESTATION
               })
             }
           >
-            Build dApps
+            Create Attestation
           </Button>
-          <Button
-            className='is-warning'
+{/*           <Button
+            className="is-warning"
             onClick={() =>
               jumpToDialogPath({
-                dialogPathId: LEARN_ABOUT_SC_SECURITY
+                dialogPathId: CREATE_A_SCHEMA
               })
             }
           >
-            Learn about Smart Contract security
-          </Button>
+            Create a Schema
+          </Button> */}
         </>
       )
     }

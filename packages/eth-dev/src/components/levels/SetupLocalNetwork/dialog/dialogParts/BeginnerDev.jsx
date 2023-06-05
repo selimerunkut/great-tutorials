@@ -17,23 +17,101 @@ const _dialog = [
   {
     dialog: () => (
       <SpeakerLeft pathToAvatar='./assets/punk_anon.png'>
-        We've recently brokered a truce with on of the other gangs
+        We’ve recently gathered other Attestors. 
+        
+        I’ll introduce you to the schemas and attestations.
+
+        Click Connect Wallet!
+      </SpeakerLeft>
+    ),
+    choices: null
+  },
+
+  {
+    dialog: () => (
+      <SpeakerLeft pathToAvatar='./assets/punk_anon.png'>
+        You can search for a schema or explore a few featured schemas.
+        We will choose an existing one to make things easier for you!
       </SpeakerLeft>
     ),
     choices: null
   },
   {
     dialog: () => (
-      <SpeakerLeft pathToAvatar='./assets/punk_anon.png'>I'll introduce you</SpeakerLeft>
+      <SpeakerLeft pathToAvatar='./assets/punk_anon.png'>
+        You can search for a schema or explore a few featured schemas. We will choose an existing one.
+      </SpeakerLeft>
     ),
-    choices: () => (
-      <a href='https://cryptozombies.io'>
-        <Button className='is-warning' id='cryptozombies-io'>
-          Check out cryptozombies.io
-        </Button>
-      </a>
-    )
+    choices: null
+  },
+  {
+    dialog: () => (
+      <SpeakerLeft pathToAvatar='./assets/punk_anon.png'>
+          Check the list for "Make a Statement" and clixk on it, if you don't find it you can also search for it.
+      </SpeakerLeft>
+    ),
+    choices: null
+  },
+  {
+    dialog: () => (
+      <SpeakerLeft pathToAvatar='./assets/punk_anon.png'>
+          Click on "Attest with Schema"
+      </SpeakerLeft>
+    ),
+    choices: null
+  },
+  {
+    dialog: () => (
+      <SpeakerLeft pathToAvatar='./assets/punk_anon.png'>
+          You can choose an optional recipient if you want to sent your attestations.
+      </SpeakerLeft>
+    ),
+    choices: null
+  },
+  {
+    dialog: () => (
+      <SpeakerLeft pathToAvatar='./assets/punk_anon.png'>
+          You need to provide a message like: "I am a crypto OG"
+      </SpeakerLeft>
+    ),
+    choices: null
+  },
+  {
+    dialog: () => (
+      <SpeakerLeft pathToAvatar='./assets/punk_anon.png'>
+          Now you have the option to leave your attestations onchain for all eternity 
+          or you can choose to make them offline/private.
+      </SpeakerLeft>
+    ),
+    choices: null
+  },
+  {
+    dialog: () => (
+      <SpeakerLeft pathToAvatar='./assets/punk_anon.png'>
+          If you choose offchain you will just sign the attestations with your wallet and don't pay anything.
+          Onchain you will pay a fee to store the attestations on the blockchain.
+      </SpeakerLeft>
+    ),
+    choices: null
+  },
+  {
+    dialog: () => (
+      <SpeakerLeft pathToAvatar='./assets/punk_anon.png'>
+          We go with offchain for now, so click on "Sign and Send" and confirm the transaction in your wallet.
+      </SpeakerLeft>
+    ),
+    choices: null
+  },
+  {
+    dialog: () => (
+      <SpeakerLeft pathToAvatar='./assets/punk_anon.png'>
+          After you sign your attestations, the details are displayed in a new page.
+          There you have the option to publish it to IPFS or download it.
+      </SpeakerLeft>
+    ),
+    choices: null
   }
+
 ]
 
 const enrichedDialog = enrichDialog(_dialog, DIALOG_PART_ID)

@@ -29,7 +29,7 @@ const WelcomeWindow = ({
       initWidth={initWidth}
       backgroundPath='./assets/items/window.png'
       dragAreaHeightPercent={12}
-      windowTitle='ETH.DEV'
+      windowTitle='EAS.TUTORIAL'
       isOpen={isOpen}
       contentContainerStyle={{ paddingTop: 0 }}
     >
@@ -46,33 +46,21 @@ const WelcomeWindow = ({
         }}
       >
         <h2 style={{ textAlign: 'center', marginTop: 20, marginBottom: 20, color: '#16DC8C' }}>
-          Welcome to eth.dev!
+          Welcome to EAS, the global attestation layer for the Ethereum ecosystem!
         </h2>
         <p style={{ lineHeight: '30px', color: '#16DC8C' }}>
-          You are about to enter a game which aims to prepare you to navigate the Ethereum
-          Blockchain space as a developer.
+          You are about to enter a game which aims to prepare you to enhance global consumer safety & trustless economies using attestations. 
+          It provides various applications across a range of industries and scenarios. 
           <br />
-          You will take the role of a tech-savvy cryptopunk that skirts the very edge of web3
-          hacking.
+          You will take the role of a tech-savy cryptopunk Attestor, who attests to the authenticity of certain information!
         </p>
         <p style={{ lineHeight: '30px', color: '#16DC8C' }}>
-          Most of the coding challenges are taken from real-world examples. From apps and protocols
-          that are live on the Ethereum main chain and in some cases handle hundreds of millions of
-          $$$.
+          Attest to anything and everything!
         </p>
         <p style={{ lineHeight: '30px', color: '#16DC8C' }}>
-          However, this is not a game for beginners!
-          <br />
-          This game is targeted towards more experienced developers that are proficient in
-          JavaScript, NodeJS, and the basics of Solidity.
-        </p>
-        <p style={{ lineHeight: '30px', color: '#16DC8C' }}>
-          If you are looking to learn solidity basics, may we suggest that you head over to our
-          friends at{' '}
-          <a href='https://cryptozombies.io' target='_blank' rel='noreferrer'>
-            cryptozombies.io
-          </a>
-          ?
+          Attestations are taken from real-world examples. 
+          From apps and protocols that are on chain such as  Decentralized Identifiers, Verifiable Credentials, Cryptographic Proofs, Claims & Web3 Badges or off-chain such as Passports & IDs, Social Accounts, 
+          any Statements you make in some cases handling hundreds of millions of $$$.
         </p>
         <div style={{ float: 'left', width: '100%', padding: '0 20%' }}>
           <Button
@@ -84,7 +72,7 @@ const WelcomeWindow = ({
               enterGame()
             }}
           >
-            Start Journey
+            Start Your Attestation Journey
           </Button>
           <div
             style={{
@@ -95,9 +83,9 @@ const WelcomeWindow = ({
               textAlign: 'center'
             }}
           >
-            or
+            {/* or */}
           </div>
-          <Button
+{/*           <Button
             className='is-warning'
             onClick={() => {
               audio.click.play()
@@ -107,7 +95,7 @@ const WelcomeWindow = ({
             }}
           >
             Pick Level
-          </Button>
+          </Button> */}
         </div>
       </div>
     </WindowModal>

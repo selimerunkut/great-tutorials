@@ -33,7 +33,7 @@ const _dialog = [
     ),
     choices: ({continueDialog}) => (
       <Link to={routesMap.SetupLocalNetwork.path}>
-        <Button className='is-warning'>Open EAS App</Button>
+        <Button className='is-warning'>Open EAS Page</Button>
       </Link>
     )
   }

@@ -11,7 +11,8 @@ import {
   RoofSatellite,
   Workstation,
   ExchangeRed,
-  ExchangeStonks
+  ExchangeStonks,
+  HackerSpaceCorner
 } from './backgrounds'
 
 const backgroundsMap = {
@@ -25,7 +26,8 @@ const backgroundsMap = {
   RoofSatellite: <RoofSatellite />,
   Workstation: <Workstation />,
   ExchangeRed: <ExchangeRed />,
-  ExchangeStonks: <ExchangeStonks />
+  ExchangeStonks: <ExchangeStonks />,
+  HackerSpaceCorner: <HackerSpaceCorner />
 }
 
 const backgroundIds = {
@@ -39,7 +41,8 @@ const backgroundIds = {
   RoofSatellite: 'RoofSatellite',
   Workstation: 'Workstation',
   ExchangeRed: 'ExchangeRed',
-  ExchangeStonks: 'ExchangeStonks'
+  ExchangeStonks: 'ExchangeStonks',
+  HackerSpaceCorner: 'HackerSpaceCorner' 
 }
 
 export { backgroundsMap, backgroundIds }

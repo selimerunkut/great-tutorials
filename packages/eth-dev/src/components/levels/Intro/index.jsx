@@ -1,4 +1,5 @@
-import React, { useEffect } from 'react'
+import React, { useEffect, useState } from 'react'
+import { useNavigate } from 'react-router-dom'
 import { useLocalStorage } from 'react-use'
 import { backgroundIds } from '../../gameItems/components/Background/backgroundsMap'
 import {
@@ -17,6 +18,21 @@ import { DIALOG_PART_ID as INITIAL_DIALOG_PART_ID } from './dialog/dialogParts/S
 export const LEVEL_ID = 'Intro'
 
 const IntroLevel = () => {
+
+    const refresh = () => window.location.reload(true)
+
+
+
+/*   const [a, setA] = useState()
+  const [b, setB] = useState()
+
+  useEffect(() => {
+    setA(localStorage.getItem('Intro-showWelcomeWindow'))
+    setB(localStorage.getItem('Intro-showWelcomeWindow2'))
+  }, [LEVEL_ID])
+
+  console.log("a", a)
+  console.log("b", b) */
   // --------------------------------
   // set initial level background
   const [backgroundId, setBackgroundId] = useLocalStorage(
@@ -94,6 +110,10 @@ const IntroLevel = () => {
   const [showTerminal, setShowTerminal] = useLocalStorage(`${LEVEL_ID}-showTerminal`, false)
   const dispalyTerminal = () => setShowTerminal(true)
 
+  /* const navigate = useNavigate() */
+
+  
+  
   return (
     <>
       <Background backgroundId={backgroundId} />
@@ -111,6 +131,8 @@ const IntroLevel = () => {
             onClick={() => {
               audio.click.play()
               setShowWelcomeWindow(true)
+              setShowWelcomeWindow2(false)
+              refresh()
             }}
           >
             <span style={{ marginLeft: 5, marginRight: 5 }}>Leave your mark! (EAS)</span>
@@ -128,6 +150,8 @@ const IntroLevel = () => {
             onClick={() => {
               audio.click.play()
               setShowWelcomeWindow2(true)
+              setShowWelcomeWindow(false)
+              refresh()
             }}
           >
             <span style={{ marginLeft: 8, marginRight: 8 }}>Who are you? (Polygon ID)</span>

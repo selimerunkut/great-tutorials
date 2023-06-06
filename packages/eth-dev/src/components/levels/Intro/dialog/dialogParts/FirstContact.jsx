@@ -1,4 +1,6 @@
-import React from 'react'
+import React, { useEffect } from 'react'
+
+
 import { Link } from 'react-router-dom'
 
 import { routesMap } from '../../../../../routes'
@@ -11,6 +13,14 @@ import { DIALOG_PART_ID as PolygoneID } from '../../../polygon-id/dialog/dialogP
 
 export const LEVEL_ID = 'Intro'
 export const DIALOG_PART_ID = `${LEVEL_ID}/FirstContact`
+
+
+  const showWelcomeWindow = localStorage.getItem('Intro-showWelcomeWindow')
+  const showWelcomeWindow2 = localStorage.getItem('Intro-showWelcomeWindow2')
+  
+
+console.log("showWelcomeWindow", showWelcomeWindow)
+console.log("showWelcomeWindow2", showWelcomeWindow2)
 
 const _dialog = [
   {
@@ -38,8 +48,12 @@ const _dialog = [
       <SpeakerLeft pathToAvatar="./assets/punk_anon.png">What do you want to do?</SpeakerLeft>
     ),
     choices: ({ jumpToDialogPath }) => {
+      
+      console.log("showWelcomeWindow", showWelcomeWindow)
+
       return (
         <>
+        {showWelcomeWindow === 'true' && (
           <Button
             className="is-warning"
             onClick={() =>
@@ -50,6 +64,7 @@ const _dialog = [
           >
             Create Attestation
           </Button>
+        )}
 {/*           <Button
             className="is-warning"
             onClick={() =>
@@ -60,6 +75,7 @@ const _dialog = [
           >
             Create a Schema
           </Button>  */}
+          {showWelcomeWindow2 === 'true' && (
           <Button
             className="is-warning"
             onClick={() =>
@@ -68,14 +84,15 @@ const _dialog = [
               })
             }
           >
-            Polygon ID
+            Create Polygon ID
           </Button> 
-          
+          )}
         </>
       )
     }
   }
 ]
+
 
 const enrichedDialog = enrichDialog(_dialog, DIALOG_PART_ID)
 

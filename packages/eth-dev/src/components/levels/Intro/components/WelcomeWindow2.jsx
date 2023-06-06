@@ -27,14 +27,14 @@ const WelcomeWindow2 = ({
       initLeft={window.innerWidth / 2 - initWidth / 2}
       initHeight={initHeight}
       initWidth={initWidth}
-      backgroundPath='./assets/items/window.png'
+      backgroundPath="./assets/items/window.png"
       dragAreaHeightPercent={12}
-      windowTitle='EAS.TUTORIAL'
+      windowTitle="EAS.TUTORIAL"
       isOpen={isOpen}
       contentContainerStyle={{ paddingTop: 0 }}
     >
       <div
-        className='content'
+        className="content"
         style={{
           float: 'left',
           width: '100%',
@@ -49,17 +49,29 @@ const WelcomeWindow2 = ({
           Welcome to Polygone ID, proof who you are!
         </h2>
         <p style={{ lineHeight: '30px', color: '#16DC8C' }}>
-                  </p>
-        <p style={{ lineHeight: '30px', color: '#16DC8C' }}>
-          
+          Welcome to the grim neon-lit metropolis of Polygon ID, an all-encompassing cybernetic
+          realm where the construction of identity and trust services takes center stage. With
+          relentless determination, the team orchestrates the birth of a sprawling, open ecosystem
+          that thrives on the city's veins. A realm where trust markets flourish and trust
+          management reigns supreme, fortified by an intoxicating cocktail of cutting-edge
+          technology and clandestine dealings. This unforgiving landscape pulsates with the allure
+          of new attestation and access services, each veiled behind a shroud of enigmatic
+          incentives, ready to lure both daring renegades and shadowy corporate entities.
         </p>
         <p style={{ lineHeight: '30px', color: '#16DC8C' }}>
-         
+          Enter the Access-as-a-Service, a virtual domain teeming with existing solutions awaiting
+          deployment and fresh creations yearning to materialize. Here, amidst the flickering
+          holographic spectacles and the relentless hum of data streams, the pillars of Know Your
+          Customer (KYC) and Know Your Business (KYB) stand tall, erecting formidable barriers
+          against the ever-advancing tide of emerging crypto systems. Like an enigmatic underground
+          distribution channel, Polygon ID beckons the audacious to leverage its manifold options,
+          granting access to an elusive realm where power, secrets, and fortunes are tantalizingly
+          intertwined.
         </p>
         <div style={{ float: 'left', width: '100%', padding: '0 20%' }}>
           <Button
             style={{ marginTop: 20 }}
-            className='is-warning'
+            className="is-warning"
             onClick={() => {
               audio.click.play()
               setBackgroundId(backgroundIds.RoofSatellite)
@@ -80,7 +92,7 @@ const WelcomeWindow2 = ({
             {/* or */}
           </div>
           <Button
-            className='is-warning'
+            className="is-warning"
             onClick={() => {
               audio.click.play()
               setShowWelcomeWindow2(false)
@@ -88,7 +100,7 @@ const WelcomeWindow2 = ({
           >
             Back
           </Button>
-{/*           <Button
+          {/*           <Button
             className='is-warning'
             onClick={() => {
               audio.click.play()

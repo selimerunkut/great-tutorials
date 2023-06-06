@@ -9,6 +9,7 @@ import NiftyShop from './NiftyShop'
 import DiceGame from './DiceGame'
 import ExchangeRed from './ExchangeRed'
 import ExchangeStonks from './ExchangeStonks'
+import HackerSpaceCorner from './HackerSpaceCorner'
 
 export {
   Intro,
@@ -21,5 +22,6 @@ export {
   NiftyShop,
   DiceGame,
   ExchangeRed,
-  ExchangeStonks
+  ExchangeStonks,
+  HackerSpaceCorner
 }

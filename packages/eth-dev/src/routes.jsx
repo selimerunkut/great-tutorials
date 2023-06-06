@@ -12,6 +12,7 @@ import Challenge3DiceGame from './components/levels/challenge-3-dice-game'
 import ScaffoldEthOverview from './components/levels/ScaffoldEthOverview'
 import UnderflowBug from './components/levels/UnderflowBug'
 import SetupLocalNetwork from './components/levels/SetupLocalNetwork'
+import SetupLocalNetwork2 from './components/levels/SetupLocalNetwork2'
 import CreateWallet from './components/levels/CreateWallet'
 import SetupMetamask from './components/levels/SetupMetamask'
 import GamblingContract from './components/levels/GamblingContract'
@@ -76,6 +77,11 @@ export const routesList = [
     name: 'SetupLocalNetwork',
     path: '/setup-local-network',
     component: props => <SetupLocalNetwork {...props} />
+  },
+  {
+    name: 'SetupLocalNetwork2',
+    path: '/setup-local-network2',
+    component: props => <SetupLocalNetwork2 {...props} />
   },
   {
     name: 'CreateWallet',

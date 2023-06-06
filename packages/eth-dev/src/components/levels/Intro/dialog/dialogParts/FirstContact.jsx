@@ -7,6 +7,7 @@ import { SpeakerLeft, SpeakerRight, Button } from '../../../../gameItems/compone
 
 import { DIALOG_PART_ID as CREATE_ATTESTATION } from './CreateAttestation'
 import { DIALOG_PART_ID as CREATE_A_SCHEMA } from './CreateASchema'
+import { DIALOG_PART_ID as PolygoneID } from '../../../polygon-id/dialog/dialogParts/Start.jsx'
 
 export const LEVEL_ID = 'Intro'
 export const DIALOG_PART_ID = `${LEVEL_ID}/FirstContact`
@@ -58,7 +59,18 @@ const _dialog = [
             }
           >
             Create a Schema
-          </Button> */}
+          </Button>  */}
+          <Button
+            className="is-warning"
+            onClick={() =>
+              jumpToDialogPath({
+                dialogPathId: PolygoneID
+              })
+            }
+          >
+            Polygon ID
+          </Button> 
+          
         </>
       )
     }

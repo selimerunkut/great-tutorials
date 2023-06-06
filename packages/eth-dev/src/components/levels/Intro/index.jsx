@@ -10,7 +10,7 @@ import {
   Button
 } from '../../gameItems/components'
 
-import { WelcomeWindow } from './components'
+import { WelcomeWindow, WelcomeWindow2 } from './components'
 import levelDialog from './dialog'
 import { DIALOG_PART_ID as INITIAL_DIALOG_PART_ID } from './dialog/dialogParts/StartMonolog'
 
@@ -62,6 +62,10 @@ const IntroLevel = () => {
     `${LEVEL_ID}-showWelcomeWindow`,
     false
   )
+  const [showWelcomeWindow2, setShowWelcomeWindow2] = useLocalStorage(
+    `${LEVEL_ID}-showWelcomeWindow2`,
+    false
+  )
   const [showFactionSupportOverviewWindow, setShowFactionSupportOverviewWindow] = useLocalStorage(
     `${LEVEL_ID}-showFactionSupportOverviewWindow`,
     false
@@ -109,15 +113,38 @@ const IntroLevel = () => {
               setShowWelcomeWindow(true)
             }}
           >
-            <span style={{ marginLeft: 5, marginRight: 5 }}>Enter Game</span>
+            <span style={{ marginLeft: 5, marginRight: 5 }}>Leave your mark! (EAS)</span>
           </Button>
         )}
-
+        {!showWelcomeWindow && !didEnterGame && (
+        <Button
+            className='is-warning'
+            style={{
+              position: 'absolute',
+              top: '36%',
+              right: '44.5%',
+              width: '13%'
+            }}
+            onClick={() => {
+              audio.click.play()
+              setShowWelcomeWindow2(true)
+            }}
+          >
+            <span style={{ marginLeft: 8, marginRight: 8 }}>Who are you? (Polygon ID)</span>
+          </Button>
+          )}
         <WelcomeWindow
           isOpen={showWelcomeWindow && !didEnterGame}
           setBackgroundId={setBackgroundId}
           enterGame={enterGame}
           setShowWelcomeWindow={setShowWelcomeWindow}
+          setShowFactionSupportOverviewWindow={setShowFactionSupportOverviewWindow}
+        />
+        <WelcomeWindow2
+          isOpen={showWelcomeWindow2 && !didEnterGame}
+          setBackgroundId={setBackgroundId}
+          enterGame={enterGame}
+          setShowWelcomeWindow2={setShowWelcomeWindow2}
           setShowFactionSupportOverviewWindow={setShowFactionSupportOverviewWindow}
         />
 

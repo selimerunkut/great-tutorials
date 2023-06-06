@@ -28,10 +28,10 @@ const _dialog = [
   {
     dialog: () => (
       <SpeakerLeft pathToAvatar='./assets/punk_anon.png'>
-        Well, you can go to <a href="https://easscan.org/attestation/create" target="_blank">easscan</a> or we can open it here
+        Well, you can go to <a href="https://easscan.org/attestation/create" target="_blank">easscan</a> and we can open it here
       </SpeakerLeft>
     ),
-    choices: () => (
+    choices: ({continueDialog}) => (
       <Link to={routesMap.SetupLocalNetwork.path}>
         <Button className='is-warning'>Open EAS App</Button>
       </Link>

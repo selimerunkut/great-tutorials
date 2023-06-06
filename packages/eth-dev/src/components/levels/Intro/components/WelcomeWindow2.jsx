@@ -3,11 +3,11 @@ import React from 'react'
 import { backgroundIds } from '../../../gameItems/components/Background/backgroundsMap'
 import { WindowModal, Button } from '../../../gameItems/components'
 
-const WelcomeWindow = ({
+const WelcomeWindow2 = ({
   isOpen,
   enterGame,
   setBackgroundId,
-  setShowWelcomeWindow,
+  setShowWelcomeWindow2,
   setShowFactionSupportOverviewWindow
 }) => {
   const initHeight = window.innerHeight * 0.9
@@ -46,21 +46,15 @@ const WelcomeWindow = ({
         }}
       >
         <h2 style={{ textAlign: 'center', marginTop: 20, marginBottom: 20, color: '#16DC8C' }}>
-          Welcome to EAS, the global attestation layer for the Ethereum ecosystem!
+          Welcome to Polygone ID, proof who you are!
         </h2>
         <p style={{ lineHeight: '30px', color: '#16DC8C' }}>
-          You are about to enter a game which aims to prepare you to enhance global consumer safety & trustless economies using attestations. 
-          It provides various applications across a range of industries and scenarios. 
-          <br />
-          You will take the role of a tech-savy cryptopunk Attestor, who attests to the authenticity of certain information!
+                  </p>
+        <p style={{ lineHeight: '30px', color: '#16DC8C' }}>
+          
         </p>
         <p style={{ lineHeight: '30px', color: '#16DC8C' }}>
-          Attest to anything and everything!
-        </p>
-        <p style={{ lineHeight: '30px', color: '#16DC8C' }}>
-          Attestations are taken from real-world examples. 
-          From apps and protocols that are on chain such as  Decentralized Identifiers, Verifiable Credentials, Cryptographic Proofs, Claims & Web3 Badges or off-chain such as Passports & IDs, Social Accounts, 
-          any Statements you make in some cases handling hundreds of millions of $$$.
+         
         </p>
         <div style={{ float: 'left', width: '100%', padding: '0 20%' }}>
           <Button
@@ -68,11 +62,11 @@ const WelcomeWindow = ({
             className='is-warning'
             onClick={() => {
               audio.click.play()
-              setBackgroundId(backgroundIds.CityOutskirts)
+              setBackgroundId(backgroundIds.RoofSatellite)
               enterGame()
             }}
           >
-            Start Your Attestation Journey
+            Find out who you are
           </Button>
           <div
             style={{
@@ -89,7 +83,7 @@ const WelcomeWindow = ({
             className='is-warning'
             onClick={() => {
               audio.click.play()
-              setShowWelcomeWindow(false)
+              setShowWelcomeWindow2(false)
             }}
           >
             Back
@@ -111,4 +105,4 @@ const WelcomeWindow = ({
   )
 }
 
-export default WelcomeWindow
+export default WelcomeWindow2

@@ -31,7 +31,7 @@ const _dialog = [
     dialog: () => (
       <SpeakerLeft pathToAvatar='./assets/punk_anon.png'>
         You can search for a schema or explore a few featured schemas.
-        We will choose an existing one to make things easier for you!
+        
       </SpeakerLeft>
     ),
     choices: null
@@ -39,7 +39,7 @@ const _dialog = [
   {
     dialog: () => (
       <SpeakerLeft pathToAvatar='./assets/punk_anon.png'>
-        You can search for a schema or explore a few featured schemas. We will choose an existing one.
+        We will choose an existing one to make things easier for you!
       </SpeakerLeft>
     ),
     choices: null
@@ -80,7 +80,7 @@ const _dialog = [
     dialog: () => (
       <SpeakerLeft pathToAvatar='./assets/punk_anon.png'>
           Now you have the option to leave your attestations onchain for all eternity 
-          or you can choose to make them offline/private.
+          or you can choose to make them offline and private.
       </SpeakerLeft>
     ),
     choices: null
@@ -89,7 +89,14 @@ const _dialog = [
     dialog: () => (
       <SpeakerLeft pathToAvatar='./assets/punk_anon.png'>
           If you choose offchain you will just sign the attestations with your wallet and don't pay anything.
-          Onchain you will pay a fee to store the attestations on the blockchain.
+      </SpeakerLeft>
+    ),
+    choices: null
+  },
+  {
+    dialog: () => (
+      <SpeakerLeft pathToAvatar='./assets/punk_anon.png'>
+          If you are rich enough to write data onchain, you can pay a fee to store the attestations on the blockchain.
       </SpeakerLeft>
     ),
     choices: null
@@ -106,12 +113,26 @@ const _dialog = [
     dialog: () => (
       <SpeakerLeft pathToAvatar='./assets/punk_anon.png'>
           After you sign your attestations, the details are displayed in a new page.
-          There you have the option to publish it to IPFS or download it.
+      </SpeakerLeft>
+    ),
+    choices: null
+  },
+  {
+    dialog: () => (
+      <SpeakerLeft pathToAvatar='./assets/punk_anon.png'>
+          You have also the option to publish it to IPFS or download your attestation.
+      </SpeakerLeft>
+    ),
+    choices: null
+  },
+  {
+    dialog: () => (
+      <SpeakerLeft pathToAvatar='./assets/punk_anon.png'>
+          Well done my friend. Be the gas price allways on your side.
       </SpeakerLeft>
     ),
     choices: null
   }
-
 ]
 
 const enrichedDialog = enrichDialog(_dialog, DIALOG_PART_ID)

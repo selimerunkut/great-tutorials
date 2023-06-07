@@ -1,11 +1,14 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 
+import { routesMap } from '../../../../../routes'
 import { enrichDialog } from '../../../../../helpers'
 import { SpeakerLeft, SpeakerRight, Button } from '../../../../gameItems/components'
 
 export const LEVEL_ID = 'SetupLocalNetwork'
 export const DIALOG_PART_ID = `${LEVEL_ID}/BeginnerDev`
+
+const refresh = () => window.location.reload(true)
 
 const _dialog = [
   {
@@ -138,6 +141,23 @@ const _dialog = [
       </SpeakerLeft>
     ),
     choices: null
+  },
+  {
+    dialog: () => (
+      <SpeakerLeft pathToAvatar='./assets/punk_anon.png'>
+        You can start another journey if you want
+      </SpeakerLeft>
+    ),
+    choices: ({continueDialog}) => (
+      <Link to={routesMap.Intro.path}>
+        <Button className='is-warning'
+                    onClick={() => {
+                      //localStorage.clear();
+                      //refresh()
+                    }}
+        >Back to Workstation</Button>
+      </Link>
+    )
   }
 ]
 

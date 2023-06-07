@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react'
+import useLLM from "usellm";
 import { useNavigate } from 'react-router-dom'
 import { useLocalStorage } from 'react-use'
 import { backgroundIds } from '../../gameItems/components/Background/backgroundsMap'
@@ -112,11 +113,29 @@ const IntroLevel = () => {
 
   /* const navigate = useNavigate() */
 
-  
+  /* app/page.tsx */
+
+  const llm = useLLM({ serviceUrl: "/api/llm" });
+  const [topic, setTopic] = useState("");
+  const [result, setResult] = useState("");
+
+  async function handleClick() {
+    await llm.chat({
+      template: "tutorial-generator",
+      inputs: { topic },
+      stream: true,
+      onStream: ({ message }) => setResult(message.content),
+    });
+  }
+
+
+
+
   
   return (
     <>
       <Background backgroundId={backgroundId} />
+      
 
       <div id='Intro'>
         {!showWelcomeWindow && !didEnterGame && (

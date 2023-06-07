@@ -8,6 +8,7 @@ import { backgroundIds } from '../../../../gameItems/components/Background/backg
 
 export const LEVEL_ID = 'PolygoneID'
 export const DIALOG_PART_ID = `${LEVEL_ID}/Start`
+const refresh = () => window.location.reload(true)
 
 const _dialog = [
   {
@@ -211,6 +212,26 @@ const _dialog = [
       </SpeakerLeft>
     ),
     choices: null
+  },
+  {
+    dialog: () => (
+      <SpeakerLeft pathToAvatar="./assets/punk_anon.png">
+        You can start another journey if you want
+      </SpeakerLeft>
+    ),
+    choices: ({ continueDialog }) => (
+      <Link to={routesMap.Intro.path}>
+        <Button
+          className="is-warning"
+          onClick={() => {
+            localStorage.clear();
+            //refresh()
+          }}
+        >
+          Back to Workstation
+        </Button>
+      </Link>
+    )
   }
 ]
 

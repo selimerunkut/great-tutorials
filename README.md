@@ -1,27 +1,30 @@
-# 🏗 eth.dev
+# 🏗 Awesome Tutorials is build for ETH Belgrade Hackathon
 
-> a gamified experience that takes a developer through learning how to build on Ethereum
+> a gamified experience that takes users through tutorials of Ethereum and Polygon services like EAS and Polygon ID
 
-![image](https://user-images.githubusercontent.com/2653167/169709929-97eafba7-db88-48ac-9041-1cca4b088d0b.png)
+[Check out the App](https://tutorial-gamification-eth-dev.vercel.app/)
+
+![image](packages/eth-dev/public/assets/Screenshot.png)
 
 ## Installing
 
+after cloning the repo
 ```bash
-git clone https://github.com/scaffold-eth/scaffold-eth -b eth-dev eth-dev
-cd eth-dev
+cd tutorial-gamification
 yarn install
 ```
 
-## Start the game
+## Start the game locally
 
 ```bash
 # 1. Terminal
-# start local chain
-yarn chain
-
-# 2. Terminal
 # start eth.dev app
 yarn start
+
+# OPTIONAL
+# 2. Terminal
+# start local chain
+yarn chain
 ```
 
 ## Create a new level
@@ -42,3 +45,9 @@ Check out the ExempleLevel(http://localhost:3000/examplelevel) for a quickstart 
 After creating a `build` you need to do a small hack to get `react-router` routes to work.
 Take a look the instructions [here](https://barcelonacodeschool.com/how-to-make-react-router-work-on-surge).
 Simply make a copy of the `index.html` file in the build folder and name the copy `200.html`.
+
+## Special Thanks 
+
+Build with https://github.com/scaffold-eth 
+
+[Sören Steiger](https://github.com/ssteiger) for letting us to use code and images from his project [eth.dev](https://github.com/scaffold-eth/scaffold-eth-examples/tree/eth-dev)

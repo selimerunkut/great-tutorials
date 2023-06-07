@@ -8,6 +8,10 @@
     "workspaces",
     "yarn"
   ],
+  "engines" : { 
+    "npm" : ">=8.0.0 <9.0.0",
+    "node" : ">=16.0.0 <17.0.0"
+  },
   "private": true,
   "scripts": {
     "eth-dev:build": "yarn workspace @scaffold-eth/eth-dev build --max-old-space-size=12288",

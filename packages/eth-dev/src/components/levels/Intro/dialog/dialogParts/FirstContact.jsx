@@ -10,6 +10,7 @@ import { DIALOG_PART_ID as CREATE_ATTESTATION } from './CreateAttestation'
 import { DIALOG_PART_ID as CREATE_A_SCHEMA } from './CreateASchema'
 import { DIALOG_PART_ID as PolygoneID } from '../../../polygon-id/dialog/dialogParts/Start.jsx'
 import { DIALOG_PART_ID as GNOSISGATEWAY } from '../../../GnosisGateway/dialog/dialogParts/Start.jsx'
+import { DIALOG_PART_ID as TAIKO } from '../../../Taiko/dialog/dialogParts/Start.jsx'
 
 export const LEVEL_ID = 'Intro'
 export const DIALOG_PART_ID = `${LEVEL_ID}/FirstContact`
@@ -17,10 +18,12 @@ export const DIALOG_PART_ID = `${LEVEL_ID}/FirstContact`
 const showWelcomeWindow = localStorage.getItem('Intro-showWelcomeWindow')
 const showWelcomeWindow2 = localStorage.getItem('Intro-showWelcomeWindow2')
 const showWelcomeWindow3 = localStorage.getItem('Intro-showWelcomeWindow3')
+const showWelcomeWindow4 = localStorage.getItem('Intro-showWelcomeWindow4')
 
 console.log('showWelcomeWindow', showWelcomeWindow)
 console.log('showWelcomeWindow2', showWelcomeWindow2)
 console.log('showWelcomeWindow3', showWelcomeWindow3)
+console.log('showWelcomeWindow4', showWelcomeWindow4)
 
 const _dialog = [
   {
@@ -76,7 +79,7 @@ const _dialog = [
             >
               Create Polygon ID
             </Button>
-          )},
+          )}
 
           {showWelcomeWindow3 === 'true' && (
             <Button
@@ -87,7 +90,19 @@ const _dialog = [
                 })
               }
             >
-              Create Polygon ID
+              Create Harberger Tax NFT
+            </Button>
+          )}
+          {showWelcomeWindow4 === 'true' && (
+            <Button
+              className="is-warning"
+              onClick={() =>
+                jumpToDialogPath({
+                  dialogPathId: TAIKO
+                })
+              }
+            >
+              Deploy on Taiko
             </Button>
           )}
         </>

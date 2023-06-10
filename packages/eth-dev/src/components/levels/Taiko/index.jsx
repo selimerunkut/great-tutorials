@@ -7,14 +7,14 @@ import { ContractWindow, ExplanationWindow } from './components'
 import levelDialog from './dialog'
 import { DIALOG_PART_ID as INITIAL_DIALOG_PART_ID } from './dialog/dialogParts/Start'
 
-export const LEVEL_ID = 'GnosisGateway'
+export const LEVEL_ID = 'Taiko'
 
-const GnosisGateway = () => {
+const Taiko = () => {
   // --------------------------------
   // set initial level background
   const [backgroundId, setBackgroundId] = useLocalStorage(
     `${LEVEL_ID}-backgroundId`,
-    backgroundIds.CityOutskirts
+    backgroundIds.Workstation
   )
 
   // set initial dialog index
@@ -41,11 +41,12 @@ const GnosisGateway = () => {
   // --------------------------------
 
   const [contractWindowIsVisible, setContractWindowVisibility] = useLocalStorage(
-    'contractWindowIsVisible',
+    `${LEVEL_ID}-contractWindowIsVisible`,
     false
   )
+
   const [explanationWindowIsVisible, setExplanationWindowVisibility] = useLocalStorage(
-    'explanationWindowIsVisible',
+    `${LEVEL_ID}-explanationWindowIsVisible`,
     false
   )
 
@@ -53,11 +54,11 @@ const GnosisGateway = () => {
     <>
       <Background backgroundId={backgroundId} />
 
-      <div id='gnosisGateway'>
+      <div id='taiko'>
         <Terminal
           isOpen
           initTop={window.innerHeight - 840}
-          initLeft={10}
+          initLeft={window.innerWidth - 530}
           showMessageNotification={{
             delayInSeconds: null
           }}
@@ -71,8 +72,8 @@ const GnosisGateway = () => {
             jumpToDialogPath={jumpToDialogPath}
             setBackgroundId={setBackgroundId}
             //
-            setContractWindowVisibility={setContractWindowVisibility}
             setExplanationWindowVisibility={setExplanationWindowVisibility}
+            setContractWindowVisibility={setContractWindowVisibility}
           />
         </Terminal>
 
@@ -89,4 +90,4 @@ const GnosisGateway = () => {
   )
 }
 
-export default GnosisGateway
+export default Taiko

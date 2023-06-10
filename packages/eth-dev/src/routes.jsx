@@ -26,6 +26,9 @@ import ERC20 from './components/levels/ERC20'
 import BondingCurves from './components/levels/BondingCurves'
 import ENS from './components/levels/ENS'
 import UpgradableContracts from './components/levels/UpgradableContracts'
+import GnosisGateway from './components/levels/GnosisGateway'
+import Taiko from './components/levels/Taiko'
+
 
 export const routesList = [
   {
@@ -119,6 +122,11 @@ export const routesList = [
     component: props => <ERC20 {...props} />
   },
   {
+    name: 'Taiko',
+    path: '/taiko',
+    component: props => <Taiko {...props} />
+  },
+  {
     name: 'BondingCurves',
     path: '/bonding-curves',
     component: props => <BondingCurves {...props} />
@@ -143,6 +151,11 @@ export const routesList = [
     path: '/ExampleLevel',
     component: props => <ExampleLevel {...props} />
   },
+  {
+    name: 'GnosisGateway',
+    path: '/gnosis-gateway',
+    component: props => <GnosisGateway {...props} />
+  }
 
 ]
 

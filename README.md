@@ -1,6 +1,6 @@
-# 🏗 Awesome Tutorials is build for ETH Belgrade Hackathon
+# 🏗 Great Tutorials
 
-> a gamified experience that takes users through tutorials of Ethereum and Polygon services like EAS and Polygon ID
+> a gamified experience that takes users through tutorials to learn Ethereum and EVM based services and software development
 
 [Check out the App](https://tutorial-gamification-eth-dev.vercel.app/)
 

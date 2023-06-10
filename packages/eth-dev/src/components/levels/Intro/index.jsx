@@ -12,10 +12,16 @@ import {
   Button
 } from '../../gameItems/components'
 
-import { WelcomeWindow, WelcomeWindow2, WelcomeWindow3, WelcomeWindow4 } from './components'
+import {
+  WelcomeWindow,
+  WelcomeWindow2,
+  WelcomeWindow3,
+  WelcomeWindow4,
+  WelcomeWindow5
+} from './components'
 import levelDialog from './dialog'
 import { DIALOG_PART_ID as INITIAL_DIALOG_PART_ID } from './dialog/dialogParts/StartMonolog'
-import ChatGPTDialog from '../../gameItems/components/ChatGPTDialog';
+import ChatGPTDialog from '../../gameItems/components/ChatGPTDialog'
 
 export const LEVEL_ID = 'Intro'
 
@@ -28,7 +34,6 @@ const IntroLevel = () => {
     `${LEVEL_ID}-backgroundId`,
     backgroundIds.Workstation
   )
-
 
   // set initial dialog index
   const [currentDialogIndex, setCurrentDialogIndex] = useLocalStorage(
@@ -78,6 +83,10 @@ const IntroLevel = () => {
   )
   const [showWelcomeWindow4, setShowWelcomeWindow4] = useLocalStorage(
     `${LEVEL_ID}-showWelcomeWindow4`,
+    false
+  )
+  const [showWelcomeWindow5, setShowWelcomeWindow5] = useLocalStorage(
+    `${LEVEL_ID}-showWelcomeWindow5`,
     false
   )
   const [showFactionSupportOverviewWindow, setShowFactionSupportOverviewWindow] = useLocalStorage(
@@ -148,6 +157,7 @@ const IntroLevel = () => {
               setShowWelcomeWindow2(false)
               setShowWelcomeWindow3(false)
               setShowWelcomeWindow4(false)
+              setShowWelcomeWindow5(false)
               refresh()
             }}
           >
@@ -171,6 +181,7 @@ const IntroLevel = () => {
               setShowWelcomeWindow2(true)
               setShowWelcomeWindow3(false)
               setShowWelcomeWindow4(false)
+              setShowWelcomeWindow5(false)
               refresh()
             }}
           >
@@ -194,6 +205,7 @@ const IntroLevel = () => {
               setShowWelcomeWindow2(false)
               setShowWelcomeWindow3(true)
               setShowWelcomeWindow4(false)
+              setShowWelcomeWindow5(false)
               refresh()
             }}
           >
@@ -217,6 +229,31 @@ const IntroLevel = () => {
               setShowWelcomeWindow2(false)
               setShowWelcomeWindow3(false)
               setShowWelcomeWindow4(true)
+              setShowWelcomeWindow5(false)
+              refresh()
+            }}
+          >
+            <span style={{ marginLeft: 0, marginRight: 0, fontSize: 10, textAlign: 'center' }}>
+              Deploy on Taiko?
+            </span>
+          </Button>
+        )}
+        {!showWelcomeWindow && !didEnterGame && (
+          <Button
+            className="is-warning"
+            style={{
+              position: 'absolute',
+              top: '38%',
+              right: '20.5%',
+              width: '10%'
+            }}
+            onClick={() => {
+              audio.click.play()
+              setShowWelcomeWindow(false)
+              setShowWelcomeWindow2(false)
+              setShowWelcomeWindow3(false)
+              setShowWelcomeWindow4(false)
+              setShowWelcomeWindow5(true)
               refresh()
             }}
           >
@@ -253,6 +290,13 @@ const IntroLevel = () => {
           setShowWelcomeWindow4={setShowWelcomeWindow4}
           setShowFactionSupportOverviewWindow={setShowFactionSupportOverviewWindow}
         />
+        <WelcomeWindow5
+          isOpen={showWelcomeWindow5 && !didEnterGame}
+          setBackgroundId={setBackgroundId}
+          enterGame={enterGame}
+          setShowWelcomeWindow5={setShowWelcomeWindow5}
+          setShowFactionSupportOverviewWindow={setShowFactionSupportOverviewWindow}
+        />
 
         {didFinishMonolog && (
           <Terminal
@@ -275,10 +319,7 @@ const IntroLevel = () => {
               //
             />
           </Terminal>
-
-          
         )}
-         
 
         <MonologWindow isOpen={didEnterGame && !didFinishMonolog} finishMonolog={finishMonolog}>
           <MonologDialogContainer
@@ -295,25 +336,25 @@ const IntroLevel = () => {
         </MonologWindow>
 
         <Terminal
-            isOpen={showTerminal}
-            initTop={window.innerHeight - 840}
-            initLeft={10}
-            showTerminal={dispalyTerminal}
-            showMessageNotification={{
-              delayInSeconds: showTerminal ? null : 3
-            }}
-          >
-            <ChatGPTDialog
-              levelDialog={levelDialog}
-              currentDialogIndex={currentDialogIndex}
-              setCurrentDialogIndex={setCurrentDialogIndex}
-              continueDialog={continueDialog}
-              dialogPathsVisibleToUser={dialogPathsVisibleToUser}
-              jumpToDialogPath={jumpToDialogPath}
-              setBackgroundId={setBackgroundId}
-              //
-            />
-          </Terminal>
+          isOpen={showTerminal}
+          initTop={window.innerHeight - 840}
+          initLeft={10}
+          showTerminal={dispalyTerminal}
+          showMessageNotification={{
+            delayInSeconds: showTerminal ? null : 3
+          }}
+        >
+          <ChatGPTDialog
+            levelDialog={levelDialog}
+            currentDialogIndex={currentDialogIndex}
+            setCurrentDialogIndex={setCurrentDialogIndex}
+            continueDialog={continueDialog}
+            dialogPathsVisibleToUser={dialogPathsVisibleToUser}
+            jumpToDialogPath={jumpToDialogPath}
+            setBackgroundId={setBackgroundId}
+            //
+          />
+        </Terminal>
       </div>
     </>
   )

@@ -49,7 +49,7 @@ const WelcomeWindow4 = ({
           Welcome to the Taiko Layerverse
         </h2>
         <p style={{ lineHeight: '30px', color: '#16DC8C' }}>
-          In the neon-lit shadows of the metaverse, the Taiko Alpha-2 testnet, known as Askja,
+          In the neon-lit shadows of the metaverse, the Taiko testnet, known as Sepolia,
           emerges, beckoning developers to unleash their creations. Here, the Type 1 ZK-EVM, a
           mirror of the Ethereum realm, welcomes all with open arms. Your familiar Ethereum tools
           and smart contracts find solace in this cybernetic domain.
@@ -71,7 +71,7 @@ const WelcomeWindow4 = ({
         </p>
 
         <p style={{ lineHeight: '30px', color: '#16DC8C' }}>
-          Welcome, intrepid developer, to Askja, where innovation knows no bounds. Embrace the
+          Welcome, intrepid developer, to Taiko, where innovation knows no bounds. Embrace the
           tools, ignite your imagination, and transcend the limits of possibility.
         </p>
 

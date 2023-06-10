@@ -54,7 +54,7 @@ const UnderflowBug = () => {
     <>
       <Background backgroundId={backgroundId} />
 
-      <div id='underflowBug'>
+      <div id="underflowBug">
         <Terminal
           isOpen
           initTop={window.innerHeight - 840}
@@ -84,16 +84,16 @@ const UnderflowBug = () => {
             delayInSeconds: null
           }}
         >
-             <ChatGPTDialog
-              levelDialog={levelDialog}
-              currentDialogIndex={currentDialogIndex}
-              setCurrentDialogIndex={setCurrentDialogIndex}
-              continueDialog={continueDialog}
-              dialogPathsVisibleToUser={dialogPathsVisibleToUser}
-              jumpToDialogPath={jumpToDialogPath}
-              setBackgroundId={setBackgroundId}
-              //
-            />
+          <ChatGPTDialog
+            levelDialog={levelDialog}
+            currentDialogIndex={currentDialogIndex}
+            setCurrentDialogIndex={setCurrentDialogIndex}
+            continueDialog={continueDialog}
+            dialogPathsVisibleToUser={dialogPathsVisibleToUser}
+            jumpToDialogPath={jumpToDialogPath}
+            setBackgroundId={setBackgroundId}
+            //
+          />
         </Terminal>
         <ContractWindow isOpen={contractWindowIsVisible} />
 

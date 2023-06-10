@@ -46,37 +46,20 @@ const WelcomeWindow3 = ({
         }}
       >
         <h2 style={{ textAlign: 'center', marginTop: 20, marginBottom: 20, color: '#16DC8C' }}>
-          Welcome to the World of Harberger
+          Unlimited Token gift from BeautyChain
         </h2>
         <p style={{ lineHeight: '30px', color: '#16DC8C' }}>
-          In the neon-lit recesses of the sprawling digital expanse, Harberger emerges as a coveted
-          anomaly—a perpetually available digital masterpiece. A sinister dance ensues as the buyer,
-          driven by desire, sets the price of acquisition. This eternal auction sustains the artist
-          through a 5% patronage, a pact intertwined with their chosen price. A digital steward
-          looms, ready to reclaim the art if the patronage falters.
+          In a cyberpunk world of decentralized economies, BeautyChain's team was rocked by an
+          unexpected revelation. On April 22nd, the dark underbelly of the system exposed itself.
+          Attackers, exploiting a hidden vulnerability, triggered an integer overflow, granting them
+          an unimaginable hoard of 10^58 BEC tokens.
         </p>
         <p style={{ lineHeight: '30px', color: '#16DC8C' }}>
-          Enabled by Gnosis, scarcity reigns over this digital enigma. Ether and a browser unlock
-          the gateway to ownership, revealing the masterpiece across all screens.
-        </p>
-
-        <p style={{ lineHeight: '30px', color: '#16DC8C' }}>
-          Yet, heed this warning amidst the cybernetic undercurrents: the unchained smart contracts
-          bear untamed risks.
-        </p>
-
-        <p style={{ lineHeight: '30px', color: '#16DC8C' }}>
-          Within this cryptic creation, questions emerge, piercing the fabric of our existence. Does
-          this digital property paradigm reshape the bond between collector, patron, and artist? Can
-          accessible patronage forge new realms of revenue? Does this system sustainably fund
-          creativity's embers? Does the perpetual auction transform the art-artist dynamic? Does the
-          art's ever-changing hands amplify its value—financially and artistically? Does the
-          ever-on-sale art illuminate the hidden commodification of our online lives?
-        </p>
-
-        <p style={{ lineHeight: '30px', color: '#16DC8C' }}>
-          Harberger's cyberpunk tale unravels, weaving a narrative that blurs the boundaries of art
-          and commerce, leaving us to grapple with our own reflection in the neon-lit abyss.
+          The team, thrust into chaos, analyzed the buggy contract—a twisted mutation of the
+          standard EIP20 token. The flaw, glaringly evident within the batchTransfer() function, led
+          to this disastrous breach. Now, amidst the neon-lit shadows, they raced against time,
+          seeked justice and redemption, hoping to reclaim what was stolen from the depths of their
+          cryptographic labyrinth.
         </p>
 
         <div style={{ float: 'left', width: '100%', padding: '0 20%' }}>

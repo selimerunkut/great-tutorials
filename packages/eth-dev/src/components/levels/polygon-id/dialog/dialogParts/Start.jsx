@@ -18,7 +18,7 @@ const failedHTML = '<div style="float: left; width: 100%; margin-top: 15px; padd
 const getData = async val => {
   try {
     const res = await fetch(
-      `https://api.gnosisscan.io/api?module=contract&action=getabi&address=${val}&apikey=${process.env.APIKEY}`
+      `https://api-sepolia.etherscan.io/api?module=contract&action=getabi&address=${val}&apikey=${process.env.ETHERSCAN_APIKEY}`
     )
 
     let response = await res.json()

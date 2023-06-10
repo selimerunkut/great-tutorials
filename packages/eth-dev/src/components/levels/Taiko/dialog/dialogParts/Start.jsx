@@ -3,19 +3,17 @@ import { enrichDialog } from '../../../../../helpers'
 import { SpeakerLeft, SpeakerRight, Button } from '../../../../gameItems/components'
 
 export const DIALOG_PART_ID = 'TAIKO'
+const explorerUrl = 'https://explorer.test.taiko.xyz/'
+const sucessHTML1 = `<div style="float: left; width: 100%; margin-top: 15px; padding-left: 60px; position: relative;"><img src="./assets/punk_anon.png" alt="avatar" class="background-image" style="position: absolute; left: 0px; bottom: 8px; min-width: 60px; transform: scaleX(1);"><div class="nes-balloon from-left" style="width: calc(100% - 15px); padding: 6px; font-size: 12px; line-height: 25px; color: rgb(33, 37, 41);"><div style="padding-left: 8px; overflow-wrap: break-word;"><a href="${explorerUrl}address/`
 
-const sucessHTML1 =
-  '<div style="float: left; width: 100%; margin-top: 15px; padding-left: 60px; position: relative;"><img src="./assets/punk_anon.png" alt="avatar" class="background-image" style="position: absolute; left: 0px; bottom: 8px; min-width: 60px; transform: scaleX(1);"><div class="nes-balloon from-left" style="width: calc(100% - 15px); padding: 6px; font-size: 12px; line-height: 25px; color: rgb(33, 37, 41);"><div style="padding-left: 8px; overflow-wrap: break-word;"><a href="https://gnosisscan.io/address/'
-const sucessHTML2 = '">Vaild Contract</a></div></div></div>'
+const sucessHTML2 = '" target="_blank">Vaild Contract</a></div></div></div>'
 
 const failedHTML =
   '<div style="float: left; width: 100%; margin-top: 15px; padding-left: 60px; position: relative;"><img src="./assets/punk_anon.png" alt="avatar" class="background-image" style="position: absolute; left: 0px; bottom: 8px; min-width: 60px; transform: scaleX(1);"><div class="nes-balloon from-left" style="width: calc(100% - 15px); padding: 6px; font-size: 12px; line-height: 25px; color: rgb(33, 37, 41);"><div style="padding-left: 8px; overflow-wrap: break-word;">Invaild Contract</div></div></div>'
 
 const getData = async val => {
   try {
-    const res = await fetch(
-      `https://api.gnosisscan.io/api?module=contract&action=getabi&address=${val}&apikey=${process.env.APIKEY}`
-    )
+    const res = await fetch(`${explorerUrl}api?module=token&action=getToken&contractaddress=${val}`)
 
     let response = await res.json()
 
@@ -79,7 +77,7 @@ const _dialog = [
       <SpeakerLeft pathToAvatar="./assets/punk_anon.png">
         Please input your contract address.
         <input
-          placeholder="input your wallet address"
+          placeholder="input the contract address"
           onChange={val => {
             getData(val.target.value)
           }}

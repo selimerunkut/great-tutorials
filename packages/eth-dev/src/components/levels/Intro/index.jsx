@@ -42,6 +42,7 @@ const IntroLevel = () => {
     backgroundIds.Workstation
   )
 
+
   // set initial dialog index
   const [currentDialogIndex, setCurrentDialogIndex] = useLocalStorage(
     `${LEVEL_ID}-currentDialogIndex`,
@@ -102,6 +103,10 @@ const IntroLevel = () => {
   )
   const finishMonolog = () => setDidFinishMonolog(true)
 
+  const [isOpen, setChatGPTDialog] = useState(false)
+  const showChatGPTDialog = () => setChatGPTDialog(true)
+  const closeChatGPTDialog = () => setChatGPTDialog(true)
+
   const removeMonologFromDialog = () => {
     const arr = dialogPathsVisibleToUser.filter(e => e !== INITIAL_DIALOG_PART_ID)
     setDialogPathsVisibleToUser(arr)
@@ -140,7 +145,7 @@ const IntroLevel = () => {
   return (
     <>
       <Background backgroundId={backgroundId} />
-      
+     
 
       <div id='Intro'  style={{fontSize: '10px !important'}}>
         {!showWelcomeWindow && !didEnterGame && (
@@ -250,7 +255,23 @@ const IntroLevel = () => {
 
           
         )}
-         <Terminal
+         
+
+        <MonologWindow isOpen={didEnterGame && !didFinishMonolog} finishMonolog={finishMonolog}>
+          <MonologDialogContainer
+            levelDialog={levelDialog}
+            currentDialogIndex={currentDialogIndex}
+            setCurrentDialogIndex={setCurrentDialogIndex}
+            continueDialog={continueDialog}
+            dialogPathsVisibleToUser={dialogPathsVisibleToUser}
+            jumpToDialogPath={jumpToDialogPath}
+            setBackgroundId={setBackgroundId}
+            //
+            setDidFinishMonolog={setDidFinishMonolog}
+          />
+        </MonologWindow>
+
+        <Terminal
             isOpen={showTerminal}
             initTop={window.innerHeight - 840}
             initLeft={10}
@@ -270,20 +291,6 @@ const IntroLevel = () => {
               //
             />
           </Terminal>
-
-        <MonologWindow isOpen={didEnterGame && !didFinishMonolog} finishMonolog={finishMonolog}>
-          <MonologDialogContainer
-            levelDialog={levelDialog}
-            currentDialogIndex={currentDialogIndex}
-            setCurrentDialogIndex={setCurrentDialogIndex}
-            continueDialog={continueDialog}
-            dialogPathsVisibleToUser={dialogPathsVisibleToUser}
-            jumpToDialogPath={jumpToDialogPath}
-            setBackgroundId={setBackgroundId}
-            //
-            setDidFinishMonolog={setDidFinishMonolog}
-          />
-        </MonologWindow>
       </div>
     </>
   )

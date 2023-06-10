@@ -6,7 +6,7 @@ import { Terminal, TerminalDialogContainer, Background } from '../../gameItems/c
 import { InstructionsWindow } from './components'
 import levelDialog from './dialog'
 import { DIALOG_PART_ID as INITIAL_DIALOG_PART_ID } from './dialog/dialogParts/Start'
-
+import ChatGPTDialog from '../../gameItems/components/ChatGPTDialog'
 export const LEVEL_ID = 'SetupMetamask'
 
 const SetupMetamaskLevel = ({ loadWeb3Modal }) => {
@@ -49,7 +49,7 @@ const SetupMetamaskLevel = ({ loadWeb3Modal }) => {
     <>
       <Background backgroundId={backgroundId} />
 
-      <div id='setupMetamask'>
+      <div id="setupMetamask">
         <Terminal
           isOpen
           initTop={window.innerHeight - 840}
@@ -71,7 +71,25 @@ const SetupMetamaskLevel = ({ loadWeb3Modal }) => {
             setInstructionsWindowVisibility={setInstructionsWindowVisibility}
           />
         </Terminal>
-
+        <Terminal
+          isOpen
+          initTop={window.innerHeight - 840}
+          initLeft={window.innerWidth - 530}
+          showMessageNotification={{
+            delayInSeconds: null
+          }}
+        >
+          <ChatGPTDialog
+            levelDialog={levelDialog}
+            currentDialogIndex={currentDialogIndex}
+            setCurrentDialogIndex={setCurrentDialogIndex}
+            continueDialog={continueDialog}
+            dialogPathsVisibleToUser={dialogPathsVisibleToUser}
+            jumpToDialogPath={jumpToDialogPath}
+            setBackgroundId={setBackgroundId}
+            //
+          />
+        </Terminal>
         <InstructionsWindow
           isOpen={initialInstructionsWindowIsVisible}
           continueDialog={continueDialog}

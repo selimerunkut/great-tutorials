@@ -43,7 +43,7 @@ const ChatGPTDialog = ({
     <div
       id="terminalDialogContainer"
       style={{
-        marginLeft:"100px",
+        marginLeft:"-20%",
         overflow: 'scroll',
         position: 'absolute',
         top: 0,
@@ -94,15 +94,15 @@ const ChatGPTDialog = ({
         <>
           <div style={{ overflow: 'auto', zIndex: '1000' }}>
             <SpeakerLeft pathToAvatar="./assets/punk_anon.png">
-              Ask me anything about the tutorials
+              Ask me anything about the  tutorials
             </SpeakerLeft>
 
             {result && userInput && (<SpeakerRight pathToAvatar="./assets/punk5950.png">{userInput}</SpeakerRight>)}
             {result && (<SpeakerLeft pathToAvatar="./assets/punk_anon.png">{result}</SpeakerLeft>)}
             <input
               type="text"
-              placeholder="Type a question about the tutorials"
-              style={{ color: 'black', width: '100%',}}
+              placeholder="Type any quiz about tutorial"
+              style={{ color: 'black', width: '100%', height: '60px', textOverflow: 'ellipsis'}}
               value={userInput}
               onChange={e => {
                 setUserInput(e.target.value)

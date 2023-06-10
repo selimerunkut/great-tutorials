@@ -52,6 +52,7 @@ const TerminalDialogContainer = ({
       >
         <div
           className='content'
+          id="dialogContent"
           style={{
             float: 'left',
             width: '100%',

@@ -74,21 +74,6 @@ const _dialog = [
   },
   {
     dialog: () => (
-      <SpeakerLeft pathToAvatar="./assets/punk_anon.png">
-        Please input your contract address.
-        <input
-          placeholder="input the contract address"
-          onChange={val => {
-            getData(val.target.value)
-          }}
-          style={{ width: '100%' }}
-        />
-      </SpeakerLeft>
-    ),
-    choices: null
-  },
-  {
-    dialog: () => (
       <SpeakerLeft pathToAvatar="./assets/punk_anon.png">What do you think?</SpeakerLeft>
     ),
     choices: null
@@ -107,17 +92,34 @@ const _dialog = [
     ),
     choices: null
   },
+
+  {
+    dialog: () => (
+      <SpeakerLeft pathToAvatar="./assets/punk_anon.png">
+        Please input your contract address.
+        <input
+          placeholder="input the contract address"
+          onChange={val => {
+            getData(val.target.value)
+          }}
+          style={{ width: '100%' }}
+        />
+      </SpeakerLeft>
+    ),
+    choices: null
+  },
   {
     dialog: () => (
       <SpeakerLeft pathToAvatar="./assets/punk_anon.png">
         We have some more documentation that goes with this. Here, take a look.
       </SpeakerLeft>
     ),
-    choices: ({ setExplanationWindowVisibility }) => (
+    choices: ({ continueDialog, setContractWindowVisibility }) => (
       <Button
-        className="is-warning"
+        className='is-warning'
         onClick={() => {
-          setExplanationWindowVisibility(true)
+          setContractWindowVisibility(true)
+          continueDialog()
         }}
       >
         Open Documentation

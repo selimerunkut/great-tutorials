@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react'
 import { Button, CodeContainer, WindowModal } from '../../../gameItems/components'
 
 const ContractWindow = ({ isOpen }) => {
-  const contentFileName = 'ERC20.sol'
+  const contentFileName = 'ArtSteward.sol'
   const [fileContent, setFileContent] = useState('')
 
   useEffect(() => {

@@ -93,7 +93,7 @@ const ChatGPTDialog = ({
       >
         <>
           <div style={{ overflow: 'auto', zIndex: '1000' }}>
-            <SpeakerLeft pathToAvatar="./assets/punk_anon.png">
+            <SpeakerLeft pathToAvatar="./assets/dogGPT.png">
               Ask me anything about the  tutorials
             </SpeakerLeft>
 

@@ -32,7 +32,7 @@ const ExplanationWindow = ({
       initWidth={initWidth}
       backgroundPath='./assets/items/window.png'
       dragAreaHeightPercent={12}
-      windowTitle='ERC20 Tokens'
+      windowTitle='ArtSteward Tokens'
       isOpen={isOpen}
       contentContainerStyle={{ paddingTop: 0 }}
     >

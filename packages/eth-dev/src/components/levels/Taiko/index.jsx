@@ -6,6 +6,7 @@ import { Terminal, TerminalDialogContainer, Background } from '../../gameItems/c
 import { ContractWindow, ExplanationWindow } from './components'
 import levelDialog from './dialog'
 import { DIALOG_PART_ID as INITIAL_DIALOG_PART_ID } from './dialog/dialogParts/Start'
+import ChatGPTDialog from '../../gameItems/components/ChatGPTDialog'
 
 export const LEVEL_ID = 'Taiko'
 
@@ -21,6 +22,10 @@ const Taiko = () => {
   const [currentDialogIndex, setCurrentDialogIndex] = useLocalStorage(`${LEVEL_ID}-dialogIndex`, 0)
   const continueDialog = () => setCurrentDialogIndex(currentDialogIndex + 1)
 
+  const [ExampleWindowIsVisible, setExampleWindowVisibility] = useLocalStorage(
+    `${LEVEL_ID}-ExampleWindowIsVisible`,
+    false
+  )
   const [
     dialogPathsVisibleToUser,
     setDialogPathsVisibleToUser
@@ -54,7 +59,7 @@ const Taiko = () => {
     <>
       <Background backgroundId={backgroundId} />
 
-      <div id='taiko'>
+      <div id="taiko">
         <Terminal
           isOpen
           initTop={window.innerHeight - 840}
@@ -71,9 +76,29 @@ const Taiko = () => {
             dialogPathsVisibleToUser={dialogPathsVisibleToUser}
             jumpToDialogPath={jumpToDialogPath}
             setBackgroundId={setBackgroundId}
-            //
+            // setExampleWindowVisibility={setExampleWindowVisibility}
             setExplanationWindowVisibility={setExplanationWindowVisibility}
             setContractWindowVisibility={setContractWindowVisibility}
+          />
+        </Terminal>
+
+        <Terminal
+          isOpen
+          initTop={window.innerHeight - 840}
+          initLeft={window.innerWidth - 530}
+          showMessageNotification={{
+            delayInSeconds: null
+          }}
+        >
+          <ChatGPTDialog
+            levelDialog={levelDialog}
+            currentDialogIndex={currentDialogIndex}
+            setCurrentDialogIndex={setCurrentDialogIndex}
+            continueDialog={continueDialog}
+            dialogPathsVisibleToUser={dialogPathsVisibleToUser}
+            jumpToDialogPath={jumpToDialogPath}
+            setBackgroundId={setBackgroundId}
+            //
           />
         </Terminal>
 

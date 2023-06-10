@@ -9,12 +9,14 @@ import { SpeakerLeft, SpeakerRight, Button } from '../../../../gameItems/compone
 import { DIALOG_PART_ID as CREATE_ATTESTATION } from './CreateAttestation'
 import { DIALOG_PART_ID as CREATE_A_SCHEMA } from './CreateASchema'
 import { DIALOG_PART_ID as PolygoneID } from '../../../polygon-id/dialog/dialogParts/Start.jsx'
+import { DIALOG_PART_ID as GNOSISGATEWAY } from '../../../GnosisGateway/dialog/dialogParts/Start.jsx'
 
 export const LEVEL_ID = 'Intro'
 export const DIALOG_PART_ID = `${LEVEL_ID}/FirstContact`
 
 const showWelcomeWindow = localStorage.getItem('Intro-showWelcomeWindow')
 const showWelcomeWindow2 = localStorage.getItem('Intro-showWelcomeWindow2')
+const showWelcomeWindow3 = localStorage.getItem('Intro-showWelcomeWindow3')
 
 console.log('showWelcomeWindow', showWelcomeWindow)
 console.log('showWelcomeWindow2', showWelcomeWindow2)
@@ -74,9 +76,9 @@ const _dialog = [
             >
               Create Polygon ID
             </Button>
-          )}
+          )},
 
-{showWelcomeWindow3 === 'true' && (
+          {showWelcomeWindow3 === 'true' && (
             <Button
               className="is-warning"
               onClick={() =>

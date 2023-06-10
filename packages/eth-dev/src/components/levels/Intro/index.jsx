@@ -12,7 +12,7 @@ import {
   Button
 } from '../../gameItems/components'
 
-import { WelcomeWindow, WelcomeWindow2 } from './components'
+import { WelcomeWindow, WelcomeWindow2, WelcomeWindow3 } from './components'
 import levelDialog from './dialog'
 import { DIALOG_PART_ID as INITIAL_DIALOG_PART_ID } from './dialog/dialogParts/StartMonolog'
 
@@ -83,6 +83,10 @@ const IntroLevel = () => {
     `${LEVEL_ID}-showWelcomeWindow2`,
     false
   )
+  const [showWelcomeWindow3, setShowWelcomeWindow3] = useLocalStorage(
+    `${LEVEL_ID}-showWelcomeWindow3`,
+    false
+  )
   const [showFactionSupportOverviewWindow, setShowFactionSupportOverviewWindow] = useLocalStorage(
     `${LEVEL_ID}-showFactionSupportOverviewWindow`,
     false
@@ -137,7 +141,7 @@ const IntroLevel = () => {
       <Background backgroundId={backgroundId} />
       
 
-      <div id='Intro'>
+      <div id='Intro'  style={{fontSize: '10px !important'}}>
         {!showWelcomeWindow && !didEnterGame && (
           <Button
             className='is-warning'
@@ -151,10 +155,11 @@ const IntroLevel = () => {
               audio.click.play()
               setShowWelcomeWindow(true)
               setShowWelcomeWindow2(false)
+              setShowWelcomeWindow3(false)
               refresh()
             }}
           >
-            <span style={{ marginLeft: 5, marginRight: 5 }}>Leave your mark! (EAS)</span>
+            <span style={{ marginLeft: 5, marginRight: 5, fontSize: 10 }}>Leave your mark! (EAS)</span>
           </Button>
         )}
         {!showWelcomeWindow && !didEnterGame && (
@@ -170,10 +175,32 @@ const IntroLevel = () => {
               audio.click.play()
               setShowWelcomeWindow2(true)
               setShowWelcomeWindow(false)
+              setShowWelcomeWindow3(false)
               refresh()
             }}
           >
-            <span style={{ marginLeft: 8, marginRight: 8 }}>Who are you? (Polygon ID)</span>
+            <span style={{ marginLeft: 8, marginRight: 8, fontSize: 10 }}>Who are you? (Polygon ID)</span>
+          </Button>
+          )}
+        {!showWelcomeWindow && !didEnterGame && (
+        <Button
+            className='is-warning'
+            style={{
+              position: 'absolute',
+              top: '38%',
+              right: '33.5%',
+              width: '10%'
+              
+            }}
+            onClick={() => {
+              audio.click.play()
+              setShowWelcomeWindow3(true)
+              setShowWelcomeWindow2(false)
+              setShowWelcomeWindow(false)
+              refresh()
+            }}
+          >
+            <span style={{ marginLeft: 0, marginRight: 0, fontSize: 10, textAlign: 'center' }}>Collect NFT Tax? (Harberger NFT)</span>
           </Button>
           )}
         <WelcomeWindow
@@ -188,6 +215,13 @@ const IntroLevel = () => {
           setBackgroundId={setBackgroundId}
           enterGame={enterGame}
           setShowWelcomeWindow2={setShowWelcomeWindow2}
+          setShowFactionSupportOverviewWindow={setShowFactionSupportOverviewWindow}
+        />
+        <WelcomeWindow3
+          isOpen={showWelcomeWindow3 && !didEnterGame}
+          setBackgroundId={setBackgroundId}
+          enterGame={enterGame}
+          setShowWelcomeWindow3={setShowWelcomeWindow3}
           setShowFactionSupportOverviewWindow={setShowFactionSupportOverviewWindow}
         />
 

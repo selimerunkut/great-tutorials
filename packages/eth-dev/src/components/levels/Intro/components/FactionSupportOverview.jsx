@@ -138,6 +138,11 @@ const FactionSupportOverviewWindow = ({ isOpen }) => {
                   levelId: 'UpgradableContracts',
                   name: 'Upgradable Contracts',
                   path: '/upgradable-contracts'
+                },
+                {
+                  levelId: 'GnosisGateway',
+                  name: 'Gnosis contract deploy with Gateway',
+                  path: '/gnosis-gateway'
                 }
               ]
             })}

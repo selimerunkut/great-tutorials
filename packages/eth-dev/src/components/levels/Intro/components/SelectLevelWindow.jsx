@@ -18,7 +18,8 @@ const SelectLevelWindow = ({ isOpen }) => {
     'DecentralizedExchange',
     'NFTStore',
     'DAOHack',
-    'FlashLoans'
+    'FlashLoans',
+    'GnosisGateway'
   ]
 
   return (

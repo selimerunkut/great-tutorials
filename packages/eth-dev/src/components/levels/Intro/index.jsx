@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import useLLM from "usellm";
+import useLLM from 'usellm'
 import { useNavigate } from 'react-router-dom'
 import { useLocalStorage } from 'react-use'
 import { backgroundIds } from '../../gameItems/components/Background/backgroundsMap'
@@ -12,28 +12,15 @@ import {
   Button
 } from '../../gameItems/components'
 
-import { WelcomeWindow, WelcomeWindow2, WelcomeWindow3 } from './components'
+import { WelcomeWindow, WelcomeWindow2, WelcomeWindow3, WelcomeWindow4 } from './components'
 import levelDialog from './dialog'
 import { DIALOG_PART_ID as INITIAL_DIALOG_PART_ID } from './dialog/dialogParts/StartMonolog'
 
 export const LEVEL_ID = 'Intro'
 
 const IntroLevel = () => {
+  const refresh = () => window.location.reload(true)
 
-    const refresh = () => window.location.reload(true)
-
-
-
-/*   const [a, setA] = useState()
-  const [b, setB] = useState()
-
-  useEffect(() => {
-    setA(localStorage.getItem('Intro-showWelcomeWindow'))
-    setB(localStorage.getItem('Intro-showWelcomeWindow2'))
-  }, [LEVEL_ID])
-
-  console.log("a", a)
-  console.log("b", b) */
   // --------------------------------
   // set initial level background
   const [backgroundId, setBackgroundId] = useLocalStorage(
@@ -87,6 +74,10 @@ const IntroLevel = () => {
     `${LEVEL_ID}-showWelcomeWindow3`,
     false
   )
+  const [showWelcomeWindow4, setShowWelcomeWindow4] = useLocalStorage(
+    `${LEVEL_ID}-showWelcomeWindow4`,
+    false
+  )
   const [showFactionSupportOverviewWindow, setShowFactionSupportOverviewWindow] = useLocalStorage(
     `${LEVEL_ID}-showFactionSupportOverviewWindow`,
     false
@@ -119,32 +110,27 @@ const IntroLevel = () => {
 
   /* app/page.tsx */
 
-  const llm = useLLM({ serviceUrl: "/api/llm" });
-  const [topic, setTopic] = useState("");
-  const [result, setResult] = useState("");
+  const llm = useLLM({ serviceUrl: '/api/llm' })
+  const [topic, setTopic] = useState('')
+  const [result, setResult] = useState('')
 
   async function handleClick() {
     await llm.chat({
-      template: "tutorial-generator",
+      template: 'tutorial-generator',
       inputs: { topic },
       stream: true,
-      onStream: ({ message }) => setResult(message.content),
-    });
+      onStream: ({ message }) => setResult(message.content)
+    })
   }
 
-
-
-
-  
   return (
     <>
       <Background backgroundId={backgroundId} />
-      
 
-      <div id='Intro'  style={{fontSize: '10px !important'}}>
+      <div id="Intro" style={{ fontSize: '10px !important' }}>
         {!showWelcomeWindow && !didEnterGame && (
           <Button
-            className='is-warning'
+            className="is-warning"
             style={{
               position: 'absolute',
               top: '28%',
@@ -156,15 +142,18 @@ const IntroLevel = () => {
               setShowWelcomeWindow(true)
               setShowWelcomeWindow2(false)
               setShowWelcomeWindow3(false)
+              setShowWelcomeWindow4(false)
               refresh()
             }}
           >
-            <span style={{ marginLeft: 5, marginRight: 5, fontSize: 10 }}>Leave your mark! (EAS)</span>
+            <span style={{ marginLeft: 5, marginRight: 5, fontSize: 10 }}>
+              Leave your mark! (EAS)
+            </span>
           </Button>
         )}
         {!showWelcomeWindow && !didEnterGame && (
-        <Button
-            className='is-warning'
+          <Button
+            className="is-warning"
             style={{
               position: 'absolute',
               top: '36%',
@@ -173,36 +162,64 @@ const IntroLevel = () => {
             }}
             onClick={() => {
               audio.click.play()
-              setShowWelcomeWindow2(true)
               setShowWelcomeWindow(false)
+              setShowWelcomeWindow2(true)
               setShowWelcomeWindow3(false)
+              setShowWelcomeWindow4(false)
               refresh()
             }}
           >
-            <span style={{ marginLeft: 8, marginRight: 8, fontSize: 10 }}>Who are you? (Polygon ID)</span>
+            <span style={{ marginLeft: 8, marginRight: 8, fontSize: 10 }}>
+              Who are you? (Polygon ID)
+            </span>
           </Button>
-          )}
+        )}
         {!showWelcomeWindow && !didEnterGame && (
-        <Button
-            className='is-warning'
+          <Button
+            className="is-warning"
             style={{
               position: 'absolute',
               top: '38%',
               right: '33.5%',
               width: '10%'
-              
             }}
             onClick={() => {
               audio.click.play()
-              setShowWelcomeWindow3(true)
-              setShowWelcomeWindow2(false)
               setShowWelcomeWindow(false)
+              setShowWelcomeWindow2(false)
+              setShowWelcomeWindow3(true)
+              setShowWelcomeWindow4(false)
               refresh()
             }}
           >
-            <span style={{ marginLeft: 0, marginRight: 0, fontSize: 10, textAlign: 'center' }}>Collect NFT Tax? (Harberger NFT)</span>
+            <span style={{ marginLeft: 0, marginRight: 0, fontSize: 10, textAlign: 'center' }}>
+              Collect NFT Tax? (Harberger NFT)
+            </span>
           </Button>
-          )}
+        )}
+        {!showWelcomeWindow && !didEnterGame && (
+          <Button
+            className="is-warning"
+            style={{
+              position: 'absolute',
+              top: '38%',
+              right: '20.5%',
+              width: '10%'
+            }}
+            onClick={() => {
+              audio.click.play()
+              setShowWelcomeWindow(false)
+              setShowWelcomeWindow2(false)
+              setShowWelcomeWindow3(false)
+              setShowWelcomeWindow4(true)
+              refresh()
+            }}
+          >
+            <span style={{ marginLeft: 0, marginRight: 0, fontSize: 10, textAlign: 'center' }}>
+              Deploy on Taiko?
+            </span>
+          </Button>
+        )}
         <WelcomeWindow
           isOpen={showWelcomeWindow && !didEnterGame}
           setBackgroundId={setBackgroundId}
@@ -222,6 +239,13 @@ const IntroLevel = () => {
           setBackgroundId={setBackgroundId}
           enterGame={enterGame}
           setShowWelcomeWindow3={setShowWelcomeWindow3}
+          setShowFactionSupportOverviewWindow={setShowFactionSupportOverviewWindow}
+        />
+        <WelcomeWindow4
+          isOpen={showWelcomeWindow4 && !didEnterGame}
+          setBackgroundId={setBackgroundId}
+          enterGame={enterGame}
+          setShowWelcomeWindow4={setShowWelcomeWindow4}
           setShowFactionSupportOverviewWindow={setShowFactionSupportOverviewWindow}
         />
 

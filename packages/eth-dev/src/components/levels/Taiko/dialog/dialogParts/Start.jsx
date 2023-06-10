@@ -84,7 +84,17 @@ const _dialog = [
         Here is a contract just for Taiko:
       </SpeakerLeft>
     ),
-    choices: null
+    choices: ({ continueDialog, setContractWindowVisibility }) => (
+      <Button
+        className="is-warning"
+        onClick={() => {
+          setContractWindowVisibility(true)
+          continueDialog()
+        }}
+      >
+        Open Documentation
+      </Button>
+    )
   },
   {
     dialog: () => (
@@ -92,11 +102,28 @@ const _dialog = [
     ),
     choices: null
   },
-
   {
     dialog: () => (
       <SpeakerLeft pathToAvatar="./assets/punk_anon.png">
-        Please input your contract address.
+        We have some more documentation that goes with this. Here, take a look.
+      </SpeakerLeft>
+    ),
+    choices: ({ continueDialog, setExplanationWindowVisibility }) => (
+      <Button
+        className="is-warning"
+        onClick={() => {
+          setExplanationWindowVisibility(true)
+          continueDialog()
+        }}
+      >
+        Open Documentation
+      </Button>
+    )
+  },
+  {
+    dialog: () => (
+      <SpeakerLeft pathToAvatar="./assets/punk_anon.png">
+        You can check if your contract was deployed to Taiko Blockchain.
         <input
           placeholder="input the contract address"
           onChange={val => {
@@ -110,24 +137,8 @@ const _dialog = [
   },
   {
     dialog: () => (
-      <SpeakerLeft pathToAvatar="./assets/punk_anon.png">
-        We have some more documentation that goes with this. Here, take a look.
-      </SpeakerLeft>
+      <SpeakerLeft pathToAvatar="./assets/punk_anon.png">Everything went well? Great!</SpeakerLeft>
     ),
-    choices: ({ continueDialog, setContractWindowVisibility }) => (
-      <Button
-        className='is-warning'
-        onClick={() => {
-          setContractWindowVisibility(true)
-          continueDialog()
-        }}
-      >
-        Open Documentation
-      </Button>
-    )
-  },
-  {
-    dialog: () => <SpeakerLeft pathToAvatar="./assets/punk_anon.png">Great!</SpeakerLeft>,
     choices: null
   }
 ]

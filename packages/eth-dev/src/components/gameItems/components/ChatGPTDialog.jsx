@@ -43,7 +43,7 @@ const ChatGPTDialog = ({
     <div
       id="terminalDialogContainer"
       style={{
-        marginLeft:"-20%",
+        marginLeft: '-20%',
         overflow: 'scroll',
         position: 'absolute',
         top: 0,
@@ -78,9 +78,7 @@ const ChatGPTDialog = ({
             overflowY: 'auto',
             overflowX: 'hidden'
           }}
-        >
-         
-        </div>
+        ></div>
       </div>
 
       <div
@@ -94,22 +92,27 @@ const ChatGPTDialog = ({
         <>
           <div style={{ overflow: 'auto', zIndex: '1000' }}>
             <SpeakerLeft pathToAvatar="./assets/dogGPT.png">
-              Ask me anything about the  tutorials
+              Howdy, this is DogGPT!
+            </SpeakerLeft>
+            <SpeakerLeft pathToAvatar="./assets/dogGPT.png">
+              Ask me anything about the tutorials
             </SpeakerLeft>
 
-            {result && userInput && (<SpeakerRight pathToAvatar="./assets/punk5950.png">{userInput}</SpeakerRight>)}
-            {result && (<SpeakerLeft pathToAvatar="./assets/punk_anon.png">{result}</SpeakerLeft>)}
+            {result && userInput && (
+              <SpeakerRight pathToAvatar="./assets/punk5950.png">{userInput}</SpeakerRight>
+            )}
+            {result && <SpeakerLeft pathToAvatar="./assets/punk_anon.png">{result}</SpeakerLeft>}
             <input
               type="text"
-              placeholder="Type any quiz about tutorial"
-              style={{ color: 'black', width: '100%', height: '60px', textOverflow: 'ellipsis'}}
+              placeholder="Ask me anything"
+              style={{ color: 'black', width: '100%', height: '60px', textOverflow: 'ellipsis' }}
               value={userInput}
               onChange={e => {
                 setUserInput(e.target.value)
               }}
             />
             <button
-            style={{color: 'black', margin: '20px'}}
+              style={{ color: 'black', margin: '20px' }}
               onClick={() => {
                 handleClick()
               }}

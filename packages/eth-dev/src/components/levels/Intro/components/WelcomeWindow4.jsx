@@ -46,37 +46,33 @@ const WelcomeWindow4 = ({
         }}
       >
         <h2 style={{ textAlign: 'center', marginTop: 20, marginBottom: 20, color: '#16DC8C' }}>
-          Welcome to the World of Harberger
+          Welcome to the Taiko Layerverse
         </h2>
         <p style={{ lineHeight: '30px', color: '#16DC8C' }}>
-          In the neon-lit recesses of the sprawling digital expanse, Harberger emerges as a coveted
-          anomaly—a perpetually available digital masterpiece. A sinister dance ensues as the buyer,
-          driven by desire, sets the price of acquisition. This eternal auction sustains the artist
-          through a 5% patronage, a pact intertwined with their chosen price. A digital steward
-          looms, ready to reclaim the art if the patronage falters.
+          In the neon-lit shadows of the metaverse, the Taiko Alpha-2 testnet, known as Askja,
+          emerges, beckoning developers to unleash their creations. Here, the Type 1 ZK-EVM, a
+          mirror of the Ethereum realm, welcomes all with open arms. Your familiar Ethereum tools
+          and smart contracts find solace in this cybernetic domain.
         </p>
         <p style={{ lineHeight: '30px', color: '#16DC8C' }}>
-          Enabled by Gnosis, scarcity reigns over this digital enigma. Ether and a browser unlock
-          the gateway to ownership, revealing the masterpiece across all screens.
-        </p>
-
-        <p style={{ lineHeight: '30px', color: '#16DC8C' }}>
-          Yet, heed this warning amidst the cybernetic undercurrents: the unchained smart contracts
-          bear untamed risks.
+          Seek the Faucets, where the dance of sample ERC20 tokens unfolds, awaiting your command.
+          For ETH, venture through the Sepolia ETH faucets or find guidance within the depths of
+          Taiko's Discord, where comrades await.
         </p>
 
         <p style={{ lineHeight: '30px', color: '#16DC8C' }}>
-          Within this cryptic creation, questions emerge, piercing the fabric of our existence. Does
-          this digital property paradigm reshape the bond between collector, patron, and artist? Can
-          accessible patronage forge new realms of revenue? Does this system sustainably fund
-          creativity's embers? Does the perpetual auction transform the art-artist dynamic? Does the
-          art's ever-changing hands amplify its value—financially and artistically? Does the
-          ever-on-sale art illuminate the hidden commodification of our online lives?
+          Fear not the boundaries, for a Bridge connects the assets, seamlessly traversing between
+          testnet L2 and L1, defying the limitations of reality.
         </p>
 
         <p style={{ lineHeight: '30px', color: '#16DC8C' }}>
-          Harberger's cyberpunk tale unravels, weaving a narrative that blurs the boundaries of art
-          and commerce, leaving us to grapple with our own reflection in the neon-lit abyss.
+          In the heart of this digital haven, the Swap app resides, an ethereal reflection of
+          Uniswap V2, ready to facilitate the exchanges that shape the future of value.
+        </p>
+
+        <p style={{ lineHeight: '30px', color: '#16DC8C' }}>
+          Welcome, intrepid developer, to Askja, where innovation knows no bounds. Embrace the
+          tools, ignite your imagination, and transcend the limits of possibility.
         </p>
 
         <div style={{ float: 'left', width: '100%', padding: '0 20%' }}>
@@ -85,7 +81,7 @@ const WelcomeWindow4 = ({
             className="is-warning"
             onClick={() => {
               audio.click.play()
-              setBackgroundId(backgroundIds.NiftyShop)
+              setBackgroundId(backgroundIds.CitySkylineInsideNight)
               enterGame()
             }}
           >

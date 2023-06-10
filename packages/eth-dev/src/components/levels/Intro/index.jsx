@@ -13,6 +13,10 @@ import {
 } from '../../gameItems/components'
 
 import {
+  ContractWindow as GnosisGatewayContractWindow,
+  ExplanationWindow as GnosisGatewayExplanationWindow
+} from '../GnosisGateway/components'
+import {
   WelcomeWindow,
   WelcomeWindow2,
   WelcomeWindow3,
@@ -68,6 +72,15 @@ const IntroLevel = () => {
       './assets/sounds/mixkit-quick-positive-video-game-notification-interface-265.wav'
     )
   }
+
+  const [contractWindowIsVisible, setContractWindowVisibility] = useLocalStorage(
+    'contractWindowIsVisible',
+    false
+  )
+  const [explanationWindowIsVisible, setExplanationWindowVisibility] = useLocalStorage(
+    'explanationWindowIsVisible',
+    false
+  )
 
   const [showWelcomeWindow, setShowWelcomeWindow] = useLocalStorage(
     `${LEVEL_ID}-showWelcomeWindow`,
@@ -298,6 +311,15 @@ const IntroLevel = () => {
           setShowFactionSupportOverviewWindow={setShowFactionSupportOverviewWindow}
         />
 
+        <GnosisGatewayContractWindow isOpen={contractWindowIsVisible} />
+
+        <GnosisGatewayExplanationWindow
+          isOpen={explanationWindowIsVisible}
+          continueDialog={continueDialog}
+          setContractWindowVisibility={setContractWindowVisibility}
+          setExplanationWindowVisibility={setExplanationWindowVisibility}
+        />
+
         {didFinishMonolog && (
           <Terminal
             isOpen={showTerminal}
@@ -317,6 +339,8 @@ const IntroLevel = () => {
               jumpToDialogPath={jumpToDialogPath}
               setBackgroundId={setBackgroundId}
               //
+              setContractWindowVisibility={setContractWindowVisibility}
+              setExplanationWindowVisibility={setExplanationWindowVisibility}
             />
           </Terminal>
         )}

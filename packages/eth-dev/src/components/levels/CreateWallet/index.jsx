@@ -6,6 +6,7 @@ import { Background, Terminal, TerminalDialogContainer, Wallet } from '../../gam
 import { DetailsOnWalletsWindow, CreateWalletWindow } from './components'
 import levelDialog from './dialog'
 import { DIALOG_PART_ID as INITIAL_DIALOG_PART_ID } from './dialog/dialogParts/Start'
+import ChatGPTDialog from '../../gameItems/components/ChatGPTDialog'
 
 export const LEVEL_ID = 'CreateWallet'
 
@@ -66,7 +67,7 @@ const CreateWalletLevel = props => {
     <>
       <Background backgroundId={backgroundId} />
 
-      <div id='createWalletLevel'>
+      <div id="createWalletLevel">
         <Terminal
           isOpen
           showMessageNotification={{
@@ -86,7 +87,25 @@ const CreateWalletLevel = props => {
             setWalletIsVisible={setWalletIsVisible}
           />
         </Terminal>
-
+        <Terminal
+          isOpen
+          initTop={window.innerHeight - 840}
+          initLeft={window.innerWidth - 530}
+          showMessageNotification={{
+            delayInSeconds: null
+          }}
+        >
+          <ChatGPTDialog
+            levelDialog={levelDialog}
+            currentDialogIndex={currentDialogIndex}
+            setCurrentDialogIndex={setCurrentDialogIndex}
+            continueDialog={continueDialog}
+            dialogPathsVisibleToUser={dialogPathsVisibleToUser}
+            jumpToDialogPath={jumpToDialogPath}
+            setBackgroundId={setBackgroundId}
+            //
+          />
+        </Terminal>
         <Wallet
           isOpen={walletIsVisible}
           web3Modal={web3Modal}

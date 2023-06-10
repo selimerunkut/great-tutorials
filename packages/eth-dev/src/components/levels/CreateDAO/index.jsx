@@ -6,6 +6,7 @@ import { Terminal, TerminalDialogContainer, Background } from '../../gameItems/c
 import { AboutDAOsWindow } from './components'
 import levelDialog from './dialog'
 import { DIALOG_PART_ID as INITIAL_DIALOG_PART_ID } from './dialog/dialogParts/Start'
+import ChatGPTDialog from '../../gameItems/components/ChatGPTDialog'
 
 export const LEVEL_ID = 'CreateDAO'
 
@@ -44,7 +45,7 @@ const CreateDAO = () => {
     <>
       <Background backgroundId={backgroundId} />
 
-      <div id='CreateDAO'>
+      <div id="CreateDAO">
         <Terminal
           isOpen
           showMessageNotification={{
@@ -61,6 +62,25 @@ const CreateDAO = () => {
             setBackgroundId={setBackgroundId}
             //
             // setExplanationWindowVisibility={setExplanationWindowVisibility}
+          />
+        </Terminal>
+        <Terminal
+          isOpen
+          initTop={window.innerHeight - 840}
+          initLeft={window.innerWidth - 530}
+          showMessageNotification={{
+            delayInSeconds: null
+          }}
+        >
+          <ChatGPTDialog
+            levelDialog={levelDialog}
+            currentDialogIndex={currentDialogIndex}
+            setCurrentDialogIndex={setCurrentDialogIndex}
+            continueDialog={continueDialog}
+            dialogPathsVisibleToUser={dialogPathsVisibleToUser}
+            jumpToDialogPath={jumpToDialogPath}
+            setBackgroundId={setBackgroundId}
+            //
           />
         </Terminal>
       </div>

@@ -15,6 +15,7 @@ import {
 import { WelcomeWindow, WelcomeWindow2, WelcomeWindow3 } from './components'
 import levelDialog from './dialog'
 import { DIALOG_PART_ID as INITIAL_DIALOG_PART_ID } from './dialog/dialogParts/StartMonolog'
+import ChatGPTDialog from '../../gameItems/components/ChatGPTDialog';
 
 export const LEVEL_ID = 'Intro'
 
@@ -246,7 +247,29 @@ const IntroLevel = () => {
               //
             />
           </Terminal>
+
+          
         )}
+         <Terminal
+            isOpen={showTerminal}
+            initTop={window.innerHeight - 840}
+            initLeft={10}
+            showTerminal={dispalyTerminal}
+            showMessageNotification={{
+              delayInSeconds: showTerminal ? null : 3
+            }}
+          >
+            <ChatGPTDialog
+              levelDialog={levelDialog}
+              currentDialogIndex={currentDialogIndex}
+              setCurrentDialogIndex={setCurrentDialogIndex}
+              continueDialog={continueDialog}
+              dialogPathsVisibleToUser={dialogPathsVisibleToUser}
+              jumpToDialogPath={jumpToDialogPath}
+              setBackgroundId={setBackgroundId}
+              //
+            />
+          </Terminal>
 
         <MonologWindow isOpen={didEnterGame && !didFinishMonolog} finishMonolog={finishMonolog}>
           <MonologDialogContainer

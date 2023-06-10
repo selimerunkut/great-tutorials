@@ -97,19 +97,19 @@ const ChatGPTDialog = ({
               Ask me anything about the tutorials
             </SpeakerLeft>
 
+            {result && userInput && (<SpeakerRight pathToAvatar="./assets/punk5950.png">{userInput}</SpeakerRight>)}
             {result && (<SpeakerLeft pathToAvatar="./assets/punk_anon.png">{result}</SpeakerLeft>)}
-
             <input
               type="text"
               placeholder="Type a question about the tutorials"
-              style={{ color: 'black', width: '100%' }}
+              style={{ color: 'black', width: '100%',}}
               value={userInput}
               onChange={e => {
                 setUserInput(e.target.value)
               }}
             />
             <button
-            style={{color: 'black'}}
+            style={{color: 'black', margin: '20px'}}
               onClick={() => {
                 handleClick()
               }}

@@ -85,7 +85,7 @@ const WelcomeWindow4 = ({
               enterGame()
             }}
           >
-            Let's create some art
+            Let's deploy on Taiko
           </Button>
           <div
             style={{

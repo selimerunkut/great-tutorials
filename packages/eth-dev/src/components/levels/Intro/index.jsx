@@ -358,7 +358,7 @@ const IntroLevel = () => {
             setDidFinishMonolog={setDidFinishMonolog}
           />
         </MonologWindow>
-
+        {didFinishMonolog && (
         <Terminal
           isOpen={showTerminal}
           initTop={window.innerHeight - 840}
@@ -379,6 +379,7 @@ const IntroLevel = () => {
             //
           />
         </Terminal>
+        )}
       </div>
     </>
   )

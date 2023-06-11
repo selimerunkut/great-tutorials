@@ -11,7 +11,7 @@ A boilerplate has been prepared for you that you can fetch here:
 
 ```bash
 # fetch code
-$ git clone https://github.com/ssteiger/eth-dev-challenges.git
+$ git clone https://github.com/selimerunkut/eth-dev-challenges.git
 $ cd eth-dev-challenges
 $ git checkout underflow-bug
 

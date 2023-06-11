@@ -85,7 +85,7 @@ const WelcomeWindow5 = ({
               enterGame()
             }}
           >
-            Let's create some art
+            Let's deploy on Mantle
           </Button>
           <div
             style={{

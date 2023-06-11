@@ -63,18 +63,25 @@ const _dialog = [
     ),
     choices: null
   },
-
   {
     dialog: () => (
       <SpeakerLeft pathToAvatar="./assets/punk_anon.png">
-        Are you ready to deploy Contract, let’s go!
+        Here is the mainnet block eplorer for Taiko{' '}
+        <a href="https://explorer.test.taiko.xyz/" target="_blank">
+          Explorer: Taiko
+        </a>
       </SpeakerLeft>
     ),
     choices: null
   },
   {
     dialog: () => (
-      <SpeakerLeft pathToAvatar="./assets/punk_anon.png">What do you think?</SpeakerLeft>
+      <SpeakerLeft pathToAvatar="./assets/punk_anon.png">
+        Here is the mainnet block eplorer for Taiko{' '}
+        <a href="https://sepolia.etherscan.io/" target="_blank">
+          Explorer: Sepolia
+        </a>
+      </SpeakerLeft>
     ),
     choices: null
   },
@@ -119,6 +126,14 @@ const _dialog = [
         Open Documentation
       </Button>
     )
+  },
+  {
+    dialog: () => (
+      <SpeakerLeft pathToAvatar="./assets/punk_anon.png">
+        Are you ready to deploy the contract, let’s go!
+      </SpeakerLeft>
+    ),
+    choices: null
   },
   {
     dialog: () => (

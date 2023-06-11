@@ -320,7 +320,6 @@ const IntroLevel = () => {
             const isVisible = dialogPathsVisibleToUser.includes(dialogPathId)
             const isLastVisibleDialog = index === currentDialogIndex
             if (isVisible && isLastVisibleDialog) {
-              console.log(dialogPathId, '2222')
               if (dialogPathId === 'GNOSISGATEWAY') {
                 return (
                   <>
@@ -404,7 +403,6 @@ const IntroLevel = () => {
             />
           </Terminal>
         )}
-        {console.log(showWelcomeWindow4, '11111111111')}
         <MonologWindow isOpen={didEnterGame && !didFinishMonolog} finishMonolog={finishMonolog}>
           <MonologDialogContainer
             levelDialog={levelDialog}

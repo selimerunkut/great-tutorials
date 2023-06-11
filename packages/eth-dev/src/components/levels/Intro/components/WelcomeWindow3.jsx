@@ -70,6 +70,7 @@ const WelcomeWindow3 = ({
               audio.click.play()
               setBackgroundId(backgroundIds.NiftyShop)
               enterGame()
+              window.location.assign('/gnosis-gateway')
             }}
           >
             Let's create some art

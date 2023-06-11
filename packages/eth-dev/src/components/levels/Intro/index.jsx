@@ -223,7 +223,7 @@ const IntroLevel = () => {
             }}
           >
             <span style={{ marginLeft: 0, marginRight: 0, fontSize: 10, textAlign: 'center' }}>
-              Collect NFT Tax? (Harberger NFT)
+              Let's do some exploits (Gnosis&Gateway)
             </span>
           </Button>
         )}

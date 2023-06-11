@@ -13,7 +13,7 @@ A boilerplate has been prepared for you that you can fetch here:
 # fetch code
 $ git clone https://github.com/selimerunkut/eth-dev-challenges.git
 $ cd eth-dev-challenges
-$ git checkout underflow-bug
+$ git checkout gnosis_gateway_underflow
 
 # install dependencies
 $ yarn

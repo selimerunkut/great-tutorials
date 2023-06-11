@@ -73,7 +73,7 @@ const WelcomeWindow3 = ({
               window.location.assign('/gnosis-gateway')
             }}
           >
-            Let's create some art
+            Let's exploit some tokens
           </Button>
           <div
             style={{

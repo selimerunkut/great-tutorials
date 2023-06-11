@@ -8,9 +8,9 @@ import levelDialog from './dialog'
 import { DIALOG_PART_ID as INITIAL_DIALOG_PART_ID } from './dialog/dialogParts/Start'
 import ChatGPTDialog from '../../gameItems/components/ChatGPTDialog'
 
-export const LEVEL_ID = 'Taiko'
+export const LEVEL_ID = 'Mantle'
 
-const Taiko = () => {
+const Mantle = () => {
   // --------------------------------
   // set initial level background
   const [backgroundId, setBackgroundId] = useLocalStorage(
@@ -59,7 +59,7 @@ const Taiko = () => {
     <>
       <Background backgroundId={backgroundId} />
 
-      <div id="taiko">
+      <div id="mantle">
         <Terminal
           isOpen
           initTop={window.innerHeight - 840}
@@ -115,4 +115,4 @@ const Taiko = () => {
   )
 }
 
-export default Taiko
+export default Mantle

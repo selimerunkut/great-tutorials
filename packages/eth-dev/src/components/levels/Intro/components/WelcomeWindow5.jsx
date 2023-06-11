@@ -46,10 +46,10 @@ const WelcomeWindow5 = ({
         }}
       >
         <h2 style={{ textAlign: 'center', marginTop: 20, marginBottom: 20, color: '#16DC8C' }}>
-          Welcome to the Taiko Layerverse
+          Welcome to the Mantle
         </h2>
         <p style={{ lineHeight: '30px', color: '#16DC8C' }}>
-          In the neon-lit shadows of the metaverse, the Taiko testnet, known as Sepolia,
+          In the neon-lit shadows of the metaverse, the Mantle testnet,
           emerges, beckoning developers to unleash their creations. Here, the Type 1 ZK-EVM, a
           mirror of the Ethereum realm, welcomes all with open arms. Your familiar Ethereum tools
           and smart contracts find solace in this cybernetic domain.
@@ -57,7 +57,7 @@ const WelcomeWindow5 = ({
         <p style={{ lineHeight: '30px', color: '#16DC8C' }}>
           Seek the Faucets, where the dance of sample ERC20 tokens unfolds, awaiting your command.
           For ETH, venture through the Sepolia ETH faucets or find guidance within the depths of
-          Taiko's Discord, where comrades await.
+          Mantle's Discord, where comrades await.
         </p>
 
         <p style={{ lineHeight: '30px', color: '#16DC8C' }}>
@@ -71,7 +71,7 @@ const WelcomeWindow5 = ({
         </p>
 
         <p style={{ lineHeight: '30px', color: '#16DC8C' }}>
-          Welcome, intrepid developer, to Taiko, where innovation knows no bounds. Embrace the
+          Welcome, intrepid developer, to Mantle, where innovation knows no bounds. Embrace the
           tools, ignite your imagination, and transcend the limits of possibility.
         </p>
 

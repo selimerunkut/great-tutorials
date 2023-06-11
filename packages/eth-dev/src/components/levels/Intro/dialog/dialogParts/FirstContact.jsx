@@ -11,6 +11,8 @@ import { DIALOG_PART_ID as CREATE_A_SCHEMA } from './CreateASchema'
 import { DIALOG_PART_ID as PolygoneID } from '../../../polygon-id/dialog/dialogParts/Start.jsx'
 import { DIALOG_PART_ID as GNOSISGATEWAY } from '../../../GnosisGateway/dialog/dialogParts/Start.jsx'
 import { DIALOG_PART_ID as TAIKO } from '../../../Taiko/dialog/dialogParts/Start.jsx'
+import { DIALOG_PART_ID as MANTLE } from '../../../Mantle/dialog/dialogParts/Start.jsx'
+
 
 export const LEVEL_ID = 'Intro'
 export const DIALOG_PART_ID = `${LEVEL_ID}/FirstContact`
@@ -19,11 +21,13 @@ const showWelcomeWindow = localStorage.getItem('Intro-showWelcomeWindow')
 const showWelcomeWindow2 = localStorage.getItem('Intro-showWelcomeWindow2')
 const showWelcomeWindow3 = localStorage.getItem('Intro-showWelcomeWindow3')
 const showWelcomeWindow4 = localStorage.getItem('Intro-showWelcomeWindow4')
+const showWelcomeWindow5 = localStorage.getItem('Intro-showWelcomeWindow5')
 
 console.log('showWelcomeWindow', showWelcomeWindow)
 console.log('showWelcomeWindow2', showWelcomeWindow2)
 console.log('showWelcomeWindow3', showWelcomeWindow3)
 console.log('showWelcomeWindow4', showWelcomeWindow4)
+console.log('showWelcomeWindow5', showWelcomeWindow5)
 
 const _dialog = [
   {
@@ -103,6 +107,18 @@ const _dialog = [
               }
             >
               Deploy on Taiko
+            </Button>
+          )}
+          {showWelcomeWindow5 === 'true' && (
+            <Button
+              className="is-warning"
+              onClick={() =>
+                jumpToDialogPath({
+                  dialogPathId: MANTLE
+                })
+              }
+            >
+              Deploy on Mantle
             </Button>
           )}
         </>

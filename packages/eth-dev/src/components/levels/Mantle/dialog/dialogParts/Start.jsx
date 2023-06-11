@@ -2,7 +2,7 @@ import React from 'react'
 import { enrichDialog } from '../../../../../helpers'
 import { SpeakerLeft, SpeakerRight, Button } from '../../../../gameItems/components'
 
-export const DIALOG_PART_ID = 'TAIKO'
+export const DIALOG_PART_ID = 'MANTLE'
 const explorerUrl = 'https://explorer.testnet.mantle.xyz/'
 const sucessHTML1 = `<div style="float: left; width: 100%; margin-top: 15px; padding-left: 60px; position: relative;"><img src="./assets/punk_anon.png" alt="avatar" class="background-image" style="position: absolute; left: 0px; bottom: 8px; min-width: 60px; transform: scaleX(1);"><div class="nes-balloon from-left" style="width: calc(100% - 15px); padding: 6px; font-size: 12px; line-height: 25px; color: rgb(33, 37, 41);"><div style="padding-left: 8px; overflow-wrap: break-word;"><a href="${explorerUrl}address/`
 

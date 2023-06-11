@@ -28,6 +28,7 @@ import ENS from './components/levels/ENS'
 import UpgradableContracts from './components/levels/UpgradableContracts'
 import GnosisGateway from './components/levels/GnosisGateway'
 import Taiko from './components/levels/Taiko'
+import Mantle from './components/levels/Mantle'
 
 
 export const routesList = [
@@ -125,6 +126,11 @@ export const routesList = [
     name: 'Taiko',
     path: '/taiko',
     component: props => <Taiko {...props} />
+  },
+  {
+    name: 'Mantle',
+    path: '/mantle',
+    component: props => <Mantle {...props} />
   },
   {
     name: 'BondingCurves',

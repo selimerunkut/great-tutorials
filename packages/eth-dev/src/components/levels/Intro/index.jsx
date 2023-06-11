@@ -256,7 +256,7 @@ const IntroLevel = () => {
             className="is-warning"
             style={{
               position: 'absolute',
-              top: '38%',
+              top: '60%',
               right: '20.5%',
               width: '10%'
             }}
@@ -271,7 +271,7 @@ const IntroLevel = () => {
             }}
           >
             <span style={{ marginLeft: 0, marginRight: 0, fontSize: 10, textAlign: 'center' }}>
-              Deploy on Taiko?
+              Deploy on Mantle?
             </span>
           </Button>
         )}

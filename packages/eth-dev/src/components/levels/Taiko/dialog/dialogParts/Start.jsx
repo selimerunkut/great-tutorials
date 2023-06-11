@@ -92,7 +92,7 @@ const _dialog = [
           continueDialog()
         }}
       >
-        Open Documentation
+        Open Contract Window
       </Button>
     )
   },

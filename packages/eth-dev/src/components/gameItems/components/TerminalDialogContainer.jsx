@@ -24,7 +24,7 @@ const TerminalDialogContainer = ({
 
   return (
     <div
-      id='terminalDialogContainer'
+      id="terminalDialogContainer"
       style={{
         position: 'absolute',
         top: 0,
@@ -51,7 +51,7 @@ const TerminalDialogContainer = ({
         }}
       >
         <div
-          className='content'
+          className="content"
           id="dialogContent"
           style={{
             float: 'left',

@@ -17,6 +17,11 @@ import {
   ExplanationWindow as GnosisGatewayExplanationWindow
 } from '../GnosisGateway/components'
 import {
+  ContractWindow as TaikoContractWindow,
+  ExplanationWindow as TaikoExplanationWindow
+} from '../Taiko/components'
+
+import {
   WelcomeWindow,
   WelcomeWindow2,
   WelcomeWindow3,
@@ -256,7 +261,7 @@ const IntroLevel = () => {
             className="is-warning"
             style={{
               position: 'absolute',
-              top: '38%',
+              top: '60%',
               right: '20.5%',
               width: '10%'
             }}
@@ -271,7 +276,7 @@ const IntroLevel = () => {
             }}
           >
             <span style={{ marginLeft: 0, marginRight: 0, fontSize: 10, textAlign: 'center' }}>
-              Deploy on Taiko?
+              Deploy on Mantle?
             </span>
           </Button>
         )}
@@ -310,16 +315,71 @@ const IntroLevel = () => {
           setShowWelcomeWindow5={setShowWelcomeWindow5}
           setShowFactionSupportOverviewWindow={setShowFactionSupportOverviewWindow}
         />
+        {levelDialog.map(
+          ({ dialogPathId, dialog: dialogComponent, choices: choicesComponent }, index) => {
+            const isVisible = dialogPathsVisibleToUser.includes(dialogPathId)
+            const isLastVisibleDialog = index === currentDialogIndex
+            if (isVisible && isLastVisibleDialog) {
+              console.log(dialogPathId, '2222')
+              if (dialogPathId === 'GNOSISGATEWAY') {
+                return (
+                  <>
+                    <GnosisGatewayContractWindow isOpen={contractWindowIsVisible} />
 
-        <GnosisGatewayContractWindow isOpen={contractWindowIsVisible} />
+                    <GnosisGatewayExplanationWindow
+                      isOpen={explanationWindowIsVisible}
+                      continueDialog={continueDialog}
+                      setContractWindowVisibility={setContractWindowVisibility}
+                      setExplanationWindowVisibility={setExplanationWindowVisibility}
+                    />
+                  </>
+                )
+              }
+              if (dialogPathId === 'TAIKO') {
+                return (
+                  <>
+                    <TaikoContractWindow isOpen={contractWindowIsVisible} />
 
-        <GnosisGatewayExplanationWindow
-          isOpen={explanationWindowIsVisible}
-          continueDialog={continueDialog}
-          setContractWindowVisibility={setContractWindowVisibility}
-          setExplanationWindowVisibility={setExplanationWindowVisibility}
-        />
-
+                    <TaikoExplanationWindow
+                      isOpen={explanationWindowIsVisible}
+                      continueDialog={continueDialog}
+                      setContractWindowVisibility={setContractWindowVisibility}
+                      setExplanationWindowVisibility={setExplanationWindowVisibility}
+                    />
+                  </>
+                )
+              }
+            }
+            // const isLastVisibleDialog = index === currentDialogIndex
+            // if (isVisible && isLastVisibleDialog) {
+            //   if (!choicesComponent) {
+            //     return (
+            //       <Button
+            //         onClick={() => {
+            //           setCurrentDialogIndex(currentDialogIndex + 1)
+            //         }}
+            //       >
+            //         Continue
+            //       </Button>
+            //     )
+            //   }
+            //   if (choicesComponent) {
+            //     return (
+            //       <>
+            //         {choicesComponent({
+            //           levelDialog,
+            //           isLastVisibleDialog,
+            //           setCurrentDialogIndex,
+            //           continueDialog,
+            //           jumpToDialogPath,
+            //           ...parentProps
+            //         })}
+            //       </>
+            //     )
+            //   }
+            // }
+          }
+        )}
         {didFinishMonolog && (
           <Terminal
             isOpen={showTerminal}
@@ -344,7 +404,7 @@ const IntroLevel = () => {
             />
           </Terminal>
         )}
-
+        {console.log(showWelcomeWindow4, '11111111111')}
         <MonologWindow isOpen={didEnterGame && !didFinishMonolog} finishMonolog={finishMonolog}>
           <MonologDialogContainer
             levelDialog={levelDialog}
